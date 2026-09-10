@@ -139,10 +139,10 @@ td:first-child{font-family:var(--head-font);font-size:.84rem;color:var(--muted)}
 .ch.svgch{display:flex;justify-content:center;padding:8px}
 .choices.grid{flex-direction:row;flex-wrap:wrap}
 .choices.grid .ch{flex:1 1 calc(50% - 4px);min-width:120px}
-.seqrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
+.seqrow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
 .frame{border:1px solid var(--rule);border-radius:2px;line-height:0}
 .frame.miss{border-style:dashed;display:flex;align-items:center;justify-content:center;
-  width:66px;height:66px;color:var(--pen);font-family:var(--head-font);font-size:1.3rem}
+  width:58px;height:58px;color:var(--pen);font-family:var(--head-font);font-size:1.3rem}
 .expl{margin:14px 0 0;padding:13px 15px;border:1px solid var(--rule);border-radius:3px;font-size:.95rem}
 .expl b{font-family:var(--head-font);font-size:.85rem;display:block;margin-bottom:4px}
 .expl.good b{color:var(--ok)} .expl.bad b{color:var(--no)}
@@ -199,7 +199,7 @@ ar:{
  lblSec:'القسم',lblMode:'الوضع',start:'ابدأ',
  secV:'الفيربال',secVs:'30 عبارة من بنك 90',
  secN:'النومريكال',secNs:'17 سؤالًا من بنك 30',
- secI:'الاندكتف',secIs:'24 سؤالًا · متولّدة',
+ secI:'الاندكتف',secIs:'24 سؤالًا · أشكال متعددة',
  mR:'مراجعة محلولة',mRs:'البنك كامل · بلا وقت · الشرح ظاهر',
  mE:'محاكاة مؤقتة',mEs:'بتوقيت الاختبار الحقيقي · بلا حلول',
  reviewBar:function(n){return 'مراجعة محلولة · '+n+' سؤالًا';},
@@ -223,7 +223,7 @@ en:{
  lblSec:'Section',lblMode:'Mode',start:'Start',
  secV:'Verbal',secVs:'30 statements from a bank of 90',
  secN:'Numerical',secNs:'17 questions from a bank of 30',
- secI:'Inductive',secIs:'24 questions · generated',
+ secI:'Inductive',secIs:'24 questions · varied figures',
  mR:'Worked review',mRs:'Full bank · untimed · explanations shown',
  mE:'Timed simulation',mEs:'Real test timing · answers hidden',
  reviewBar:function(n){return 'Worked review · '+n+' questions';},
@@ -300,7 +300,7 @@ GUIDE.ar=
 
 '<section><h2>القسم الثالث — الاستدلال الاستقرائي</h2>'+
 '<p class="sec-note">24 سؤالًا في 24 دقيقة. لا لغة ولا رياضيات — أشكال فقط.</p>'+
-'<p>يُعرض عليك تسلسل من الأشكال، ومطلوب استنتاج القاعدة التي تحكمه ثم اختيار الشكل التالي أو الشكل الشاذ. القاعدة لا تكون واحدة عادة، بل متغيّران أو ثلاثة تعمل في وقت واحد وكل منها مستقل عن الآخر.</p>'+
+'<p>تُعرض عليك خمسة أشكال ويُطلب منك الشكل السادس. المطلوب استنتاج القاعدة التي تحكم التسلسل ثم تطبيقها. والقاعدة لا تكون واحدة عادة، بل قاعدتان أو ثلاث تعمل في وقت واحد وكل منها مستقلة عن الأخرى تمامًا.</p>'+
 '<h3 style="font-size:1rem;margin:22px 0 8px">أنواع الأنماط</h3><ul class="plain">'+
 '<li><strong>الحركة</strong> — عنصر ينتقل بمقدار ثابت في كل خطوة، على محيط الشكل أو داخل شبكة أو حول زواياه.</li>'+
 '<li><strong>الدوران</strong> — الشكل نفسه يدور بزاوية ثابتة، مع عقارب الساعة أو عكسها.</li>'+
@@ -308,7 +308,7 @@ GUIDE.ar=
 '<li><strong>التظليل</strong> — تبادل بين ممتلئ وفارغ، أو انتقال التظليل من عنصر لآخر.</li>'+
 '<li><strong>الانعكاس</strong> — الشكل ينقلب أفقيًا أو رأسيًا، وهو أصعب ما يُخلط بالدوران.</li>'+
 '<li><strong>الحجم</strong> — تكبّر أو تصغّر تدريجي.</li>'+
-'<li><strong>التبادل</strong> — عنصران يتبادلان مواقعهما بانتظام.</li></ul>'+
+'<li><strong>التبادل</strong> — عنصران يتبادلان مواقعهما بانتظام.</li>'+'<li><strong>التسلسلان المتداخلان</strong> — الصور الفردية (1، 3، 5) تتبع قاعدة، والزوجية (2، 4، 6) تتبع قاعدة أخرى مستقلة، وقد تكون في اتجاه معاكس. من أصعب الأنواع لأن النظر إلى التسلسل ككتلة واحدة لا يكشف شيئًا.</li>'+'<li><strong>الثبات ثم الحركة</strong> — عنصر يبقى مكانه صورة أو صورتين ثم ينتقل، فيبدو النمط مكسورًا وهو منتظم.</li>'+'<li><strong>الدورة الثلاثية</strong> — ثلاث حالات تتعاقب بالترتيب ثم تعيد: فارغ ثم مخطّط ثم ممتلئ، أو ثلاثة أشكال بترتيب ثابت.</li>'+'<li><strong>الثابت المحفوظ</strong> — كمية لا تتغيّر عبر الصور رغم تغيّر توزيعها: مجموع الخطوط ثابت، أو عدد الأسهم السوداء يساوي البيضاء دائمًا. هنا القاعدة ليست حركة بل توازن.</li>'+'<li><strong>الانعكاس بين النصفين</strong> — الصورة 1 معكوسة الصورة 4، و2 معكوسة 5، و3 معكوسة 6، سواء انعكاس اتجاه أو انعكاس ألوان.</li></ul>'+
 '<div class="callout"><h3>الطريقة العملية</h3>'+
 '<p>لا تحاول رؤية القاعدة كاملة دفعة واحدة. افحص متغيّرًا واحدًا عبر جميع الأشكال — الموقع مثلًا — وتجاهل ما عداه، ثم عد وافحص الثاني. أغلب من يتعثّر في هذا القسم يتعثّر لأنه يبحث عن قاعدة واحدة تفسّر كل ما يراه.</p>'+
 '<p>وإذا حدّدت متغيّرًا واحدًا بثقة، استخدمه لاستبعاد الخيارات قبل إكمال تحليل البقية. غالبًا يكفي متغيّران لحصر الجواب في خيار واحد.</p></div></section>'+
@@ -385,7 +385,7 @@ GUIDE.en=
 
 '<section><h2>Section three — Inductive Reasoning</h2>'+
 '<p class="sec-note">24 questions in 24 minutes. No language and no arithmetic — shapes only.</p>'+
-'<p>You are shown a sequence of figures and must work out the rule governing it, then pick the next figure or the odd one out. The rule is rarely single: two or three variables usually operate at once, each independent of the others.</p>'+
+'<p>You are shown five figures and asked for the sixth. The task is to work out the rule governing the sequence and then apply it. The rule is rarely single: two or three usually operate at once, each entirely independent of the others.</p>'+
 '<h3 style="font-size:1rem;margin:22px 0 8px">Pattern types</h3><ul class="plain">'+
 '<li><strong>Movement</strong> — an element shifts by a fixed amount each step, around a perimeter, within a grid, or between corners.</li>'+
 '<li><strong>Rotation</strong> — the figure itself turns by a fixed angle, clockwise or anticlockwise.</li>'+
@@ -393,7 +393,7 @@ GUIDE.en=
 '<li><strong>Shading</strong> — alternating between filled and empty, or shading passing from one element to another.</li>'+
 '<li><strong>Reflection</strong> — the figure flips horizontally or vertically. This is the one most often mistaken for rotation.</li>'+
 '<li><strong>Size</strong> — gradual enlargement or reduction.</li>'+
-'<li><strong>Swapping</strong> — two elements exchange positions at regular intervals.</li></ul>'+
+'<li><strong>Swapping</strong> — two elements exchange positions at regular intervals.</li>'+'<li><strong>Interleaved sequences</strong> — the odd figures (1, 3, 5) follow one rule and the even ones (2, 4, 6) follow a separate rule, sometimes running the opposite way. One of the hardest types, because reading the sequence as a single block reveals nothing.</li>'+'<li><strong>Hold then move</strong> — an element stays put for one or two figures before shifting, which makes a regular pattern look broken.</li>'+'<li><strong>Three-state cycle</strong> — three states succeed one another in fixed order and then repeat: empty, hatched, filled, or three shapes in a set order.</li>'+'<li><strong>Conserved quantity</strong> — something stays constant across the figures while its distribution changes: the total number of lines is fixed, or the black arrows always equal the white ones. Here the rule is balance rather than movement.</li>'+'<li><strong>Mirroring between halves</strong> — figure 1 is the mirror of figure 4, 2 of 5, 3 of 6, whether the reflection is of direction or of colour.</li></ul>'+
 '<div class="callout"><h3>How to work through it</h3>'+
 '<p>Do not try to see the whole rule at once. Track one variable — position, say — across every figure while ignoring everything else, then go back and track the second. Most people who struggle here struggle because they are looking for a single rule that explains everything on screen.</p>'+
 '<p>Once you have pinned down one variable with confidence, use it to eliminate options before analysing the rest. Two variables are usually enough to leave one option standing.</p></div></section>'+
@@ -757,62 +757,179 @@ var NUM=[
   en:"Units = fixed costs ÷ contribution per unit = 120,000 ÷ 30 = 4,000 units."}
 ];
 
+/* ── مولّد أسئلة الأشكال: خمسة أشكال معروضة والسادس هو المطلوب ── */
 var RING=[[0,0],[0,1],[0,2],[1,2],[2,2],[2,1],[2,0],[1,0]];
-function frameSVG(pos,dots,size,fill){
-  var s=size||66,g=(s-16)/3,p=8,o='';
-  if(fill===undefined)fill=1;
-  o+='<svg viewBox="0 0 '+s+' '+s+'" width="'+s+'" height="'+s+'" xmlns="http://www.w3.org/2000/svg">';
+var SCALES=[0.55,0.68,0.81,0.94,1.07,1.20];
+var SHADE_FILL=['none','var(--pen)','var(--pen)'];
+var SHADE_OP  =['0','0.32','1'];
+
+function gridSVG(st,size){
+  var s=size||58,g=(66-16)/3,p=8,o='';
+  o+='<svg viewBox="0 0 66 66" width="'+s+'" height="'+s+'" xmlns="http://www.w3.org/2000/svg">';
   for(var r=0;r<3;r++)for(var c=0;c<3;c++){
-    var on=(RING[pos][0]===r&&RING[pos][1]===c);
-    var x=p+c*g,y=p+r*g,w=g-2.5;
-    if(on&&!fill)
-      o+='<rect x="'+(x+1)+'" y="'+(y+1)+'" width="'+(w-2)+'" height="'+(w-2)+'" rx="1" fill="none" stroke="var(--pen)" stroke-width="2"/>';
-    else
-      o+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+w+'" rx="1" fill="'+(on?'var(--pen)':'var(--grid-empty)')+'"/>';
+    var on=(RING[st.pos][0]===r&&RING[st.pos][1]===c),x=p+c*g,y=p+r*g,w=g-2.5;
+    o+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+w+'" rx="1" fill="var(--grid-empty)"/>';
+    if(on)o+='<rect x="'+(x+1)+'" y="'+(y+1)+'" width="'+(w-2)+'" height="'+(w-2)+'" rx="1" fill="var(--pen)" fill-opacity="'+SHADE_OP[st.shade]+'" stroke="var(--pen)" stroke-width="1.8"/>';
   }
-  for(var d=0;d<dots;d++)o+='<circle cx="'+(p+3+d*7)+'" cy="'+(s-4)+'" r="2.4" fill="var(--ink)"/>';
+  for(var d=0;d<st.count;d++)o+='<circle cx="'+(7+d*7)+'" cy="62" r="2.2" fill="var(--ink)"/>';
   return o+'</svg>';
 }
-function makeInductive(){
-  var STEPS=[1,2,3,5,6,7];
-  var step=STEPS[Math.floor(Math.random()*STEPS.length)];
-  var start=Math.floor(Math.random()*8);
-  var dDelta=[0,1,-1][Math.floor(Math.random()*3)];
-  var dStart=dDelta===1?1:(dDelta===-1?5:1+Math.floor(Math.random()*5));
-  var alt=Math.random()<0.5?0:1;                 // 0 = تظليل ثابت
-  var off=Math.floor(Math.random()*2);
-  function fillAt(i){return alt?(((i+off)%2===0)?1:0):1;}
-  function clamp(n){return Math.max(1,Math.min(5,n));}
-  var frames=[],i;
-  for(i=0;i<4;i++)frames.push({pos:(start+step*i)%8,dots:dStart+dDelta*i,fill:fillAt(i)});
-  var right={pos:(start+step*4)%8,dots:dStart+dDelta*4,fill:fillAt(4)};
-  var opts=[right,
-    {pos:(start+step*3)%8,dots:right.dots,fill:right.fill},
-    {pos:right.pos,dots:clamp(right.dots+(dDelta===0?1:-dDelta*2)),fill:right.fill},
-    {pos:right.pos,dots:right.dots,fill:1-right.fill},
-    {pos:(right.pos+3)%8,dots:clamp(right.dots+(dDelta===0?-1:dDelta)),fill:right.fill}];
-  function key(o){return o.pos+'-'+o.dots+'-'+o.fill;}
-  var seen={},clean=[opts[0]];seen[key(opts[0])]=1;
-  for(i=1;i<opts.length&&clean.length<4;i++){
-    if(!seen[key(opts[i])]){seen[key(opts[i])]=1;clean.push(opts[i]);}}
-  while(clean.length<4){
-    var cand={pos:Math.floor(Math.random()*8),dots:1+Math.floor(Math.random()*5),fill:Math.random()<0.5?0:1};
-    if(!seen[key(cand)]){seen[key(cand)]=1;clean.push(cand);}}
-  var order=clean.map(function(v,ix){return{v:v,r:Math.random(),correct:ix===0};})
-                 .sort(function(a,b){return a.r-b.r;});
-  var stepAr={1:'خانة واحدة مع عقارب الساعة',2:'خانتين مع عقارب الساعة',3:'ثلاث خانات مع عقارب الساعة',
-              5:'ثلاث خانات عكس عقارب الساعة',6:'خانتين عكس عقارب الساعة',7:'خانة واحدة عكس عقارب الساعة'}[step];
-  var stepEn={1:'one cell clockwise',2:'two cells clockwise',3:'three cells clockwise',
-              5:'three cells anticlockwise',6:'two cells anticlockwise',7:'one cell anticlockwise'}[step];
-  var dotAr=dDelta===0?'عدد النقاط ثابت':(dDelta>0?'عدد النقاط يزيد واحدة في كل خطوة':'عدد النقاط ينقص واحدة في كل خطوة');
-  var dotEn=dDelta===0?'the dot count stays constant':(dDelta>0?'the dot count rises by one each step':'the dot count falls by one each step');
-  var fillAr=alt?'والتظليل يتبادل بين ممتلئ وفارغ في كل خطوة':'والتظليل ممتلئ في كل الأشكال';
-  var fillEn=alt?'and the shading alternates between filled and outlined each step':'and the shading stays filled throughout';
-  var sig=[step,start,dStart,dDelta,alt,off].join(':');
-  return {frames:frames,opts:order,sig:sig,
-   ar:'ثلاثة متغيّرات مستقلة: المربع يتقدّم '+stepAr+'، و'+dotAr+'، '+fillAr+'. افحص كل متغيّر وحده عبر الأشكال الأربعة — الموقع عادة يكفي لاستبعاد خيارين، والباقيان يحسمان الجواب.',
-   en:'Three independent variables: the marked cell advances '+stepEn+', '+dotEn+', '+fillEn+'. Track each one on its own across the four figures — position usually eliminates two options, and the other two settle it.'};
+function polyPts(n,r){
+  var a=[],i,ang;
+  for(i=0;i<n;i++){ang=i*2*Math.PI/n;
+    a.push((r*Math.sin(ang)).toFixed(2)+','+(-r*Math.cos(ang)).toFixed(2));}
+  return a.join(' ');
 }
+function figSVG(st,size){
+  var s=size||58,sc=SCALES[st.size],r=18,m=st.mirror?-1:1,o='';
+  var nx=(r*0.52*Math.sin(0.95)).toFixed(2),ny=(-r*0.52*Math.cos(0.95)).toFixed(2);
+  o+='<svg viewBox="0 0 66 66" width="'+s+'" height="'+s+'" xmlns="http://www.w3.org/2000/svg">';
+  o+='<g transform="translate(33,30) scale('+m+',1) rotate('+st.rot+') scale('+sc+')">';
+  o+='<polygon points="'+polyPts(st.sides,r)+'" fill="var(--pen)" fill-opacity="'+SHADE_OP[st.shade]+
+     '" stroke="var(--pen)" stroke-width="'+(2/sc).toFixed(2)+'" stroke-linejoin="round"/>';
+  o+='<circle cx="'+nx+'" cy="'+ny+'" r="'+(3/sc).toFixed(2)+'" fill="'+(st.shade===2?'var(--card)':'var(--pen)')+'"/>';
+  o+='</g>';
+  for(var d=0;d<st.count;d++)o+='<circle cx="'+(7+d*7)+'" cy="62" r="2.2" fill="var(--ink)"/>';
+  return o+'</svg>';
+}
+function drawFrame(kind,st,size){return kind==='grid'?gridSVG(st,size):figSVG(st,size);}
+
+function rnd(n){return Math.floor(Math.random()*n);}
+function pickSome(arr,k){var a=arr.slice(),out=[],i;
+  for(i=0;i<k&&a.length;i++)out.push(a.splice(rnd(a.length),1)[0]);return out;}
+function clamp(v,lo,hi){return Math.max(lo,Math.min(hi,v));}
+
+function makeInductive(){
+  var kind=Math.random()<0.35?'grid':'figure';
+  var attrs=kind==='grid'?['pos','count','shade']:['rot','size','count','shade','sides','mirror'];
+  var vary=pickSome(attrs,2);
+  var ar=[],en=[],rule={};
+  var base={pos:rnd(8),count:2+rnd(3),shade:2,rot:45*rnd(8),size:3,sides:3+rnd(4),mirror:0};
+
+  if(vary.indexOf('pos')>-1){
+    var mode=['step','hold','split'][rnd(3)];
+    if(mode==='step'){
+      var so=[1,2,3,5,6,7],sp=so[rnd(so.length)];
+      rule.pos=function(i){return (base.pos+sp*i)%8;};
+      var pA={1:'خانة واحدة مع عقارب الساعة',2:'خانتين مع عقارب الساعة',3:'ثلاث خانات مع عقارب الساعة',
+              5:'ثلاث خانات عكس عقارب الساعة',6:'خانتين عكس عقارب الساعة',7:'خانة واحدة عكس عقارب الساعة'}[sp];
+      var pE={1:'one cell clockwise',2:'two cells clockwise',3:'three cells clockwise',
+              5:'three cells anticlockwise',6:'two cells anticlockwise',7:'one cell anticlockwise'}[sp];
+      ar.push('المربع المظلّل يتقدّم '+pA+' في كل خطوة');
+      en.push('the marked cell advances '+pE+' each step');
+    } else if(mode==='hold'){
+      var hd=Math.random()<0.5?1:7;
+      rule.pos=function(i){return (base.pos+hd*Math.floor(i/2))%8;};
+      ar.push('المربع المظلّل يثبت صورتين ثم يتحرّك خانة '+(hd===1?'مع':'عكس')+' عقارب الساعة');
+      en.push('the marked cell holds for two figures, then moves one cell '+(hd===1?'clockwise':'anticlockwise'));
+    } else {
+      var a0=rnd(8),b0=(a0+3+rnd(3))%8,sa=Math.random()<0.5?1:7,sb=Math.random()<0.5?1:7;
+      rule.pos=function(i){return i%2===0?(a0+sa*(i/2))%8:(b0+sb*((i-1)/2))%8;};
+      ar.push('الصور الفردية تتبع تسلسلًا والصور الزوجية تتبع تسلسلًا آخر مستقلًا عنه');
+      en.push('the odd-numbered figures follow one sequence and the even-numbered ones follow a separate sequence');
+    }
+  }
+  if(vary.indexOf('rot')>-1){
+    var ro=[45,90,135,225,270,315],rd=ro[rnd(ro.length)];
+    if(vary.indexOf('sides')===-1&&rd%(360/base.sides)===0)base.sides=(base.sides===4?5:3);
+    rule.rot=function(i){return (base.rot+rd*i)%360;};
+    var deg=rd>180?360-rd:rd;
+    ar.push('الشكل يدور '+deg+' درجة '+(rd>180?'عكس':'مع')+' عقارب الساعة في كل خطوة');
+    en.push('the figure turns '+deg+'\u00B0 '+(rd>180?'anticlockwise':'clockwise')+' each step');
+  }
+  if(vary.indexOf('size')>-1){
+    var zd=Math.random()<0.5?1:-1,z0=zd>0?0:5;
+    rule.size=function(i){return z0+zd*i;};
+    ar.push(zd>0?'وحجم الشكل يكبر درجة في كل صورة':'وحجم الشكل يصغر درجة في كل صورة');
+    en.push(zd>0?'the figure grows one step larger in each figure':'the figure shrinks one step in each figure');
+  }
+  if(vary.indexOf('count')>-1){
+    if(Math.random()<0.5){
+      var cd=Math.random()<0.5?1:-1,c0=cd>0?1:6;
+      rule.count=function(i){return c0+cd*i;};
+      ar.push(cd>0?'وعدد النقاط يزيد واحدة في كل صورة':'وعدد النقاط ينقص واحدة في كل صورة');
+      en.push(cd>0?'the dot count rises by one in each figure':'the dot count falls by one in each figure');
+    } else {
+      var pr=pickSome([1,2,3,4,5],2),co=rnd(2);
+      rule.count=function(i){return pr[(i+co)%2];};
+      ar.push('وعدد النقاط يتبادل بين '+pr[0]+' و'+pr[1]+' صورةً بعد صورة');
+      en.push('the dot count alternates between '+pr[0]+' and '+pr[1]+' from figure to figure');
+    }
+  }
+  if(vary.indexOf('shade')>-1){
+    if(Math.random()<0.5){
+      var so2=rnd(2);
+      rule.shade=function(i){return ((i+so2)%2===0)?2:0;};
+      ar.push('والتظليل يتبادل بين ممتلئ وفارغ');
+      en.push('the shading alternates between filled and empty');
+    } else {
+      var s3=rnd(3);
+      rule.shade=function(i){return (i+s3)%3;};
+      ar.push('والتظليل يدور على ثلاث حالات بالترتيب: فارغ ثم خفيف ثم ممتلئ ويعيد');
+      en.push('the shading cycles through three states in order: empty, light, filled, then repeats');
+    }
+  }
+  if(vary.indexOf('sides')>-1){
+    if(Math.random()<0.5){
+      var pp=pickSome([3,4,5,6],2),po=rnd(2);
+      rule.sides=function(i){return pp[(i+po)%2];};
+      ar.push('والشكل يتبادل بين '+SHNAME_AR[pp[0]]+' و'+SHNAME_AR[pp[1]]);
+      en.push('the figure alternates between '+SHNAME_EN[pp[0]]+' and '+SHNAME_EN[pp[1]]);
+    } else {
+      var tp=pickSome([3,4,5,6],3),to=rnd(3);
+      rule.sides=function(i){return tp[(i+to)%3];};
+      ar.push('والشكل يدور على ثلاثة أشكال بالترتيب: '+SHNAME_AR[tp[0]]+' ثم '+SHNAME_AR[tp[1]]+' ثم '+SHNAME_AR[tp[2]]+' ويعيد');
+      en.push('the figure cycles through three shapes in order: '+SHNAME_EN[tp[0]]+', '+SHNAME_EN[tp[1]]+', '+SHNAME_EN[tp[2]]+', then repeats');
+    }
+  }
+  if(vary.indexOf('mirror')>-1){
+    var mo=rnd(2);
+    rule.mirror=function(i){return ((i+mo)%2===0)?0:1;};
+    ar.push('والشكل ينعكس أفقيًا صورةً بعد صورة');
+    en.push('the figure flips horizontally from figure to figure');
+  }
+
+  var KEYS=['pos','count','shade','rot','size','sides','mirror'];
+  function stateAt(i){
+    var st={};KEYS.forEach(function(k){st[k]=rule[k]?rule[k](i):base[k];});return st;
+  }
+  var frames=[stateAt(0),stateAt(1),stateAt(2),stateAt(3),stateAt(4)],right=stateAt(5);
+  function key(st){return kind==='grid'
+    ? st.pos+'|'+st.count+'|'+st.shade
+    : st.rot+'|'+st.size+'|'+st.count+'|'+st.shade+'|'+st.sides+'|'+st.mirror;}
+
+  function perturb(st,a){
+    var c={};KEYS.forEach(function(k){c[k]=st[k];});
+    if(a==='pos')   c.pos=(c.pos+(Math.random()<0.5?1:6))%8;
+    if(a==='count') c.count=clamp(c.count>=4?c.count-1:c.count+1,1,6);
+    if(a==='shade') c.shade=(c.shade+1+rnd(2))%3;
+    if(a==='rot')   c.rot=(c.rot+(Math.random()<0.5?90:270))%360;
+    if(a==='size')  c.size=clamp(c.size>=3?c.size-1:c.size+1,0,5);
+    if(a==='sides') c.sides=clamp(c.sides>=5?c.sides-1:c.sides+1,3,6);
+    if(a==='mirror')c.mirror=1-c.mirror;
+    return c;
+  }
+  var seen={},opts=[right],order=pickSome(attrs,attrs.length),i,cand,guard=0;
+  seen[key(right)]=1;
+  for(i=0;i<order.length&&opts.length<4;i++){
+    cand=perturb(right,order[i]);
+    if(!seen[key(cand)]){seen[key(cand)]=1;opts.push(cand);}
+  }
+  while(opts.length<4&&guard<80){
+    guard++;cand=perturb(opts[rnd(opts.length)],attrs[rnd(attrs.length)]);
+    if(!seen[key(cand)]){seen[key(cand)]=1;opts.push(cand);}
+  }
+  var shuffled=opts.map(function(v,ix){return{v:v,r:Math.random(),correct:ix===0};})
+                   .sort(function(a,b){return a.r-b.r;});
+
+  return {kind:kind,frames:frames,opts:shuffled,
+    sig:kind+'|'+frames.map(key).join('/')+'>'+key(right),
+    ar:'قاعدتان مستقلتان: '+ar.join('، ')+'. تتبّع كل قاعدة وحدها عبر الصور الخمس قبل أن تنظر إلى الخيارات — الأولى عادة تستبعد خيارين، والثانية تحسم الباقي.',
+    en:'Two independent rules: '+en.join(', ')+'. Track each rule on its own across the five figures before looking at the options — the first usually eliminates two, and the second settles the rest.'};
+}
+var SHNAME_AR={3:'مثلث',4:'مربع',5:'خماسي',6:'سداسي'};
+var SHNAME_EN={3:'a triangle',4:'a square',5:'a pentagon',6:'a hexagon'};
+
 
 /* ══════════ الواجهة ══════════ */
 (function(){
@@ -913,7 +1030,7 @@ function makeInductive(){
         var g=makeInductive();
         if(used[g.sig])continue;
         used[g.sig]=1;
-        items.push({type:'i',frames:g.frames,opts:g.opts,ar:g.ar,en:g.en});
+        items.push({type:'i',kind:g.kind,frames:g.frames,opts:g.opts,ar:g.ar,en:g.en});
       }
     }
     var mins={verbal:17,numerical:18,inductive:24}[sec];
@@ -933,7 +1050,7 @@ function makeInductive(){
       h+='<p class="stem ltr">'+it.stem+'</p>';
     } else {
       h+='<div class="seqrow">';
-      it.frames.forEach(function(f){h+='<span class="frame">'+frameSVG(f.pos,f.dots)+'</span>';});
+      it.frames.forEach(function(f){h+='<span class="frame">'+drawFrame(it.kind,f,58)+'</span>';});
       h+='<span class="frame miss">?</span></div><p class="stem">'+t().seqQ+'</p>';
     }
     if(it.type==='i'){
@@ -941,7 +1058,7 @@ function makeInductive(){
       it.opts.forEach(function(o,i){
         var cls='ch svgch';
         if(showAns){if(o.correct)cls+=' correct';else if(picked===i)cls+=' incorrect';}
-        h+='<button class="'+cls+'" data-i="'+i+'" type="button" aria-pressed="'+(picked===i?'true':'false')+'">'+frameSVG(o.v.pos,o.v.dots,56)+'</button>';
+        h+='<button class="'+cls+'" data-i="'+i+'" type="button" aria-pressed="'+(picked===i?'true':'false')+'">'+drawFrame(it.kind,o.v,58)+'</button>';
       });
       h+='</div>';
     } else {
