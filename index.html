@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>منصة التحضير لاختبار SHL — أرامكو | SHL Preparation</title>
+<meta name="description" content="شرح أقسام اختبار SHL الثلاثة مع تدريب في وضعين. Guide to the three SHL sections with practice in two modes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;700&family=Noto+Naskh+Arabic:wght@400;700&family=Inter:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E8E9E3; --card:#FBFBF8; --ink:#16181A; --muted:#5C6167;
+  --rule:#C9CBC3; --rule-soft:#DCDDD6; --pen:#1E3EA8; --pen-soft:#E3E7F6;
+  --mark:rgba(238,214,58,.5); --grid-empty:#E0E1DA;
+  --ok:#2E7D4F; --ok-soft:#E2F0E7; --no:#B3392C; --no-soft:#F6E3E1;
+  --body-font:"Noto Naskh Arabic",'Segoe UI',Tahoma,serif;
+  --head-font:"Noto Kufi Arabic",'Segoe UI',Tahoma,sans-serif;
+  --lh:1.9;
+}
+html[lang="en"]{
+  --body-font:"Source Serif 4",Georgia,serif;
+  --head-font:"Inter",'Segoe UI',Helvetica,sans-serif;
+  --lh:1.7;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#141619; --card:#1C1F24; --ink:#E9EAE4; --muted:#9AA0A8;
+  --rule:#31363D; --rule-soft:#262A30; --pen:#8AA4FF; --pen-soft:#20263A;
+  --mark:rgba(238,214,58,.24); --grid-empty:#2A2F35;
+  --ok:#63BE8B; --ok-soft:#1B2A22; --no:#E0796C; --no-soft:#2C1E1C;
+}}
+:root[data-theme="dark"]{
+  --paper:#141619; --card:#1C1F24; --ink:#E9EAE4; --muted:#9AA0A8;
+  --rule:#31363D; --rule-soft:#262A30; --pen:#8AA4FF; --pen-soft:#20263A;
+  --mark:rgba(238,214,58,.24); --grid-empty:#2A2F35;
+  --ok:#63BE8B; --ok-soft:#1B2A22; --no:#E0796C; --no-soft:#2C1E1C;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body-font);font-size:17px;line-height:var(--lh)}
+h1,h2,h3,.kufi{font-family:var(--head-font);line-height:1.55}
+p{margin:0 0 1em}
+:focus-visible{outline:2px solid var(--pen);outline-offset:3px}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+
+header.top{border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:20}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0}
+.sig{font-family:var(--head-font);font-weight:700;font-size:.88rem}
+.sig span{color:var(--muted);font-weight:500}
+.topbtns{display:flex;gap:8px}
+.ghost{background:none;border:1px solid var(--rule);color:var(--muted);border-radius:999px;
+  padding:5px 13px;font-family:var(--head-font);font-size:.72rem;cursor:pointer;white-space:nowrap}
+.ghost:hover{color:var(--ink);border-color:var(--ink)}
+.ghost.lang{border-color:var(--pen);color:var(--pen);font-weight:600}
+
+nav.tabs{display:flex;border-bottom:1px solid var(--rule)}
+nav.tabs button{flex:1;background:none;border:none;border-bottom:2px solid transparent;
+  padding:13px 6px;font-family:var(--head-font);font-size:.9rem;color:var(--muted);cursor:pointer}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink);font-weight:700}
+
+.hero{padding:46px 0 34px}
+.hero h1{font-size:clamp(1.7rem,5.6vw,2.6rem);font-weight:700;margin:0 0 16px}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 58%,var(--mark) 58%);padding:0 .1em}
+.lede{font-size:1.05rem;color:var(--muted);max-width:56ch;margin:0}
+
+.spec{margin:30px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--rule);border-radius:3px;background:var(--card)}
+.spec li{padding:14px 15px;border-inline-end:1px solid var(--rule-soft)}
+.spec li:last-child{border-inline-end:none}
+.spec .k{display:block;font-family:var(--head-font);font-size:.68rem;color:var(--muted)}
+.spec .v{display:block;font-family:var(--head-font);font-weight:700;font-size:1rem}
+.spec .s{display:block;font-family:var(--head-font);font-size:.68rem;color:var(--pen)}
+@media(max-width:600px){.spec{grid-template-columns:1fr}
+ .spec li{border-inline-end:none;border-bottom:1px solid var(--rule-soft)}
+ .spec li:last-child{border-bottom:none}}
+
+section{padding:42px 0 0}
+h2{font-size:1.35rem;font-weight:700;margin:0 0 6px;padding-bottom:11px;border-bottom:2px solid var(--ink)}
+.sec-note{color:var(--muted);font-size:.94rem;margin:12px 0 24px}
+.callout{margin:22px 0 0;padding:17px 19px;background:var(--card);border:1px solid var(--rule);border-radius:3px}
+.callout h3{font-size:.98rem;margin:0 0 7px}
+.callout p:last-child{margin-bottom:0}
+.rulebox{margin:16px 0 0;border-inline-start:3px solid var(--pen);background:var(--pen-soft);
+  border-radius:3px;padding:14px 16px}
+.rulebox p{margin:0 0 .5em;font-size:.96rem}
+.rulebox p:last-child{margin-bottom:0}
+.rulebox b{font-family:var(--head-font);font-size:.88rem}
+ul.plain{margin:12px 0 0;padding-inline-start:20px;padding-inline-end:0}
+ul.plain li{margin-bottom:8px}
+.tbl-scroll{overflow-x:auto;margin:20px 0 0;border:1px solid var(--rule);border-radius:3px}
+table{border-collapse:collapse;width:100%;min-width:440px;background:var(--card)}
+th,td{text-align:start;padding:11px 14px;border-bottom:1px solid var(--rule-soft);font-size:.94rem;vertical-align:top}
+th{font-family:var(--head-font);font-weight:700;font-size:.78rem;border-bottom:1px solid var(--rule)}
+tr:last-child td{border-bottom:none}
+td:first-child{font-family:var(--head-font);font-size:.84rem;color:var(--muted)}
+.mono{font-family:"Inter",monospace;direction:ltr;display:inline-block;text-align:left}
+
+.panel{display:none;padding-bottom:60px}
+.panel.on{display:block}
+.setup{margin:30px 0 0;border:1px solid var(--rule);border-radius:3px;background:var(--card);padding:22px 20px}
+.setup h2{border:none;padding:0;margin:0 0 4px;font-size:1.2rem}
+.field{margin-top:20px}
+.field .lbl{font-family:var(--head-font);font-size:.75rem;color:var(--muted);margin-bottom:9px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:none;border:1px solid var(--rule);color:var(--ink);border-radius:3px;
+  padding:9px 15px;font-family:var(--head-font);font-size:.83rem;cursor:pointer;text-align:start}
+.chip small{display:block;color:var(--muted);font-size:.68rem;margin-top:2px}
+.chip[aria-pressed="true"]{border-color:var(--pen);background:var(--pen-soft);color:var(--pen);font-weight:700}
+.chip[aria-pressed="true"] small{color:var(--pen)}
+.go{margin-top:24px;width:100%;background:var(--ink);color:var(--paper);border:none;border-radius:3px;
+  padding:14px;font-family:var(--head-font);font-size:.95rem;font-weight:700;cursor:pointer}
+.go:hover{opacity:.88}
+
+.runbar{position:sticky;top:53px;background:var(--paper);border-bottom:1px solid var(--rule);
+  padding:11px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:10;
+  font-family:var(--head-font);font-size:.8rem}
+.runbar .clock{font-weight:700;font-size:1rem;font-variant-numeric:tabular-nums}
+.runbar .clock.low{color:var(--no)}
+.prog{height:3px;background:var(--rule-soft);border-radius:2px;overflow:hidden;margin-top:8px}
+.prog i{display:block;height:100%;background:var(--pen);width:0}
+
+.q{margin:26px 0 0;border:1px solid var(--rule);border-radius:3px;background:var(--card);padding:20px 18px}
+.q .num{font-family:var(--head-font);font-size:.72rem;color:var(--muted);margin-bottom:10px}
+.q .passage{background:var(--pen-soft);border-inline-start:3px solid var(--pen);border-radius:3px;
+  padding:14px 16px;margin-bottom:16px;direction:ltr;text-align:left;font-size:.95rem;line-height:1.7;
+  font-family:"Source Serif 4",Georgia,serif}
+.q .stem{margin:0 0 14px;font-size:1rem}
+.q .stem.ltr{direction:ltr;text-align:left;font-family:"Source Serif 4",Georgia,serif}
+.dtbl{overflow-x:auto;margin:0 0 16px;border:1px solid var(--rule);border-radius:3px}
+.dtbl table{min-width:320px}
+.dtbl td,.dtbl th{font-family:var(--head-font);font-size:.85rem;padding:9px 13px}
+.choices{display:flex;flex-direction:column;gap:8px}
+.ch{text-align:start;background:none;border:1px solid var(--rule);border-radius:3px;padding:11px 14px;
+  font-family:inherit;font-size:.97rem;color:var(--ink);cursor:pointer;line-height:1.7}
+.ch:hover{border-color:var(--pen)}
+.ch[aria-pressed="true"]{border-color:var(--pen);background:var(--pen-soft)}
+.ch.correct{border-color:var(--ok);background:var(--ok-soft)}
+.ch.incorrect{border-color:var(--no);background:var(--no-soft)}
+.ch.svgch{display:flex;justify-content:center;padding:8px}
+.choices.grid{flex-direction:row;flex-wrap:wrap}
+.choices.grid .ch{flex:1 1 calc(50% - 4px);min-width:120px}
+.seqrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
+.frame{border:1px solid var(--rule);border-radius:2px;line-height:0}
+.frame.miss{border-style:dashed;display:flex;align-items:center;justify-content:center;
+  width:66px;height:66px;color:var(--pen);font-family:var(--head-font);font-size:1.3rem}
+.expl{margin:14px 0 0;padding:13px 15px;border:1px solid var(--rule);border-radius:3px;font-size:.95rem}
+.expl b{font-family:var(--head-font);font-size:.85rem;display:block;margin-bottom:4px}
+.expl.good b{color:var(--ok)} .expl.bad b{color:var(--no)}
+details.rev summary{cursor:pointer;font-family:var(--head-font);font-size:.8rem;
+  color:var(--pen);list-style:none;display:inline-block;margin-top:12px}
+details.rev summary::-webkit-details-marker{display:none}
+.navrow{display:flex;gap:10px;margin:24px 0 0}
+.navrow button{flex:1;border:1px solid var(--rule);background:none;color:var(--ink);border-radius:3px;
+  padding:12px;font-family:var(--head-font);font-size:.88rem;cursor:pointer}
+.navrow button.primary{background:var(--ink);color:var(--paper);border-color:var(--ink);font-weight:700}
+.navrow button:disabled{opacity:.4;cursor:default}
+.result{margin:30px 0 0;border:1px solid var(--rule);border-radius:3px;background:var(--card);padding:26px 20px;text-align:center}
+.result .big{font-family:var(--head-font);font-size:2.6rem;font-weight:700;line-height:1.2}
+.result .sub{color:var(--muted);font-size:.92rem}
+.bar{display:flex;height:10px;border-radius:2px;overflow:hidden;border:1px solid var(--rule);margin:18px 0 8px}
+footer{margin-top:56px;border-top:1px solid var(--rule);padding:24px 0 46px}
+footer p{font-size:.85rem;color:var(--muted);margin:0 0 .6em}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <div class="sig" id="sig"></div>
+    <div class="topbtns">
+      <button class="ghost lang" id="langBtn" type="button">English</button>
+      <button class="ghost" id="themeBtn" type="button"></button>
+    </div>
+  </div>
+  <div class="wrap"><nav class="tabs" role="tablist">
+    <button role="tab" id="tab-guide" aria-selected="true" aria-controls="p-guide"></button>
+    <button role="tab" id="tab-train" aria-selected="false" aria-controls="p-train"></button>
+  </nav></div>
+</header>
+
+<div class="panel on" id="p-guide" role="tabpanel"><div class="wrap" id="guideBody"></div></div>
+
+<div class="panel" id="p-train" role="tabpanel"><div class="wrap">
+  <div id="setup" class="setup"></div>
+  <div id="runner" hidden></div>
+</div></div>
+
+<div class="wrap"><footer id="footBody"></footer></div>
+
+<script>
+/* ══════════ النصوص ثنائية اللغة ══════════ */
+var T={
+ar:{
+ dir:'rtl',sig:'تحضير SHL <span>· أرامكو</span>',theme:'تبديل المظهر',other:'English',
+ tabGuide:'الدليل',tabTrain:'التدريب',
+ setupH:'اختر القسم والوضع',
+ setupNote:'جميع الأسئلة هنا أصلية، مكتوبة على نمط الاختبار وليست منقولة منه.',
+ lblSec:'القسم',lblMode:'الوضع',start:'ابدأ',
+ secV:'الفيربال',secVs:'30 عبارة من بنك 90',
+ secN:'النومريكال',secNs:'17 سؤالًا من بنك 30',
+ secI:'الاندكتف',secIs:'24 سؤالًا · متولّدة',
+ mR:'مراجعة محلولة',mRs:'البنك كامل · بلا وقت · الشرح ظاهر',
+ mE:'محاكاة مؤقتة',mEs:'بتوقيت الاختبار الحقيقي · بلا حلول',
+ reviewBar:function(n){return 'مراجعة محلولة · '+n+' سؤالًا';},
+ changeSec:'تغيير القسم',
+ qOf:function(a,b){return 'سؤال '+a+' من '+b;},
+ qN:function(a){return 'سؤال '+a;},
+ showAns:'اعرض الإجابة والشرح',explain:'الشرح',
+ prev:'السابق',next:'التالي',finish:'إنهاء',again:'تدريب جديد',
+ pctRight:function(p){return p+'% إجابات صحيحة';},
+ resNote:'هذه نسبة صحّة داخل هذا التدريب فقط، وليست مئينًا. الاختبار الفعلي يقارنك بمجموعة مرجعية لا بعدد أسئلتك.',
+ byType:'دقّتك حسب نوع الإجابة',
+ good:'إجابة صحيحة',bad:'إجابة خاطئة',none:'لم تُجب',
+ seqQ:'أي الخيارات يكمل التسلسل؟',
+ foot:'<p>هذه المنصة مرجع تعريفي وتدريبي أُعدّ للمتقدّمين، وليست صادرة عن SHL ولا عن أي جهة توظيف. جميع الأسئلة الواردة فيها أصلية وُضعت على نمط الاختبار، ولا تحتوي على أسئلة الاختبار الفعلية.</p><p>تفاصيل المدة وعدد الأسئلة قد تختلف بحسب النسخة والوظيفة المتقدَّم عليها. آخر تحديث: سبتمبر 2026.</p>'
+},
+en:{
+ dir:'ltr',sig:'SHL Prep <span>· Aramco</span>',theme:'Switch theme',other:'العربية',
+ tabGuide:'Guide',tabTrain:'Practice',
+ setupH:'Choose a section and a mode',
+ setupNote:'Every question here is original, written in the style of the test rather than taken from it.',
+ lblSec:'Section',lblMode:'Mode',start:'Start',
+ secV:'Verbal',secVs:'30 statements from a bank of 90',
+ secN:'Numerical',secNs:'17 questions from a bank of 30',
+ secI:'Inductive',secIs:'24 questions · generated',
+ mR:'Worked review',mRs:'Full bank · untimed · explanations shown',
+ mE:'Timed simulation',mEs:'Real test timing · answers hidden',
+ reviewBar:function(n){return 'Worked review · '+n+' questions';},
+ changeSec:'Change section',
+ qOf:function(a,b){return 'Question '+a+' of '+b;},
+ qN:function(a){return 'Question '+a;},
+ showAns:'Show the answer and explanation',explain:'Explanation',
+ prev:'Back',next:'Next',finish:'Finish',again:'New session',
+ pctRight:function(p){return p+'% correct';},
+ resNote:'This is your accuracy within this practice set only, not a percentile. The real test ranks you against a norm group, not against your own question count.',
+ byType:'Your accuracy by answer type',
+ good:'Correct',bad:'Incorrect',none:'Not answered',
+ seqQ:'Which option completes the sequence?',
+ foot:'<p>This is an informational and practice resource prepared for candidates. It is not produced by SHL or by any employer. All questions on it are original, written in the style of the test; none are actual test items.</p><p>Timings and question counts vary by version and by the role applied for. Last updated: September 2026.</p>'
+}};
+
+/* ══════════ الدليل ══════════ */
+var GUIDE={};
+GUIDE.ar=
+'<div class="hero"><h1>ثلاثة أقسام، ثلاث مهارات مختلفة تمامًا — وهذا <em>ما يقيسه كل قسم</em></h1>'+
+'<p class="lede">اختبار SHL ليس اختبار معلومات، ولا يوجد منهج تحفظه. ما يقيسه هو طريقتك في التعامل مع معلومة ناقصة تحت ضغط الوقت. هنا شرح كل قسم، والقوانين والأنماط التي تحتاجها فعلًا، ثم تدريب أصلي في وضعين: محلول للمراجعة، وغير محلول لمحاكاة الاختبار.</p>'+
+'<ul class="spec">'+
+'<li><span class="k">القسم الأول — Verbal</span><span class="v">30 سؤالًا</span><span class="s">في 17 دقيقة</span></li>'+
+'<li><span class="k">القسم الثاني — Numerical</span><span class="v">17 سؤالًا</span><span class="s">في 18 دقيقة</span></li>'+
+'<li><span class="k">القسم الثالث — Inductive</span><span class="v">24 سؤالًا</span><span class="s">في 24 دقيقة</span></li>'+
+'</ul></div>'+
+
+'<section><h2>قبل أن تبدأ — أمور إجرائية</h2>'+
+'<p class="sec-note">تفاصيل تنظيمية تُربك كثيرين في أول مرة.</p><ul class="plain">'+
+'<li><strong>الأقسام منفصلة.</strong> لست مضطرًا لأدائها في جلسة واحدة. تستطيع أداء كل قسم في وقت مختلف، بشرط إنهاء الأقسام الثلاثة قبل انتهاء المهلة المحددة لك.</li>'+
+'<li><strong>المهلة تنتهي في مساء يوم الموعد النهائي.</strong> إذا كان تاريخك 19/9 فالاختبار يُغلق في تلك الليلة، لا قبلها بيوم.</li>'+
+'<li><strong>الوقت المكتوب في الإيميل أطول من وقت الأسئلة الفعلي.</strong> الفارق مخصّص لتسجيل الدخول وتجهيز الجهاز وحل الأمثلة التمهيدية، فلا تحسبه ضمن وقت الحل.</li>'+
+'<li><strong>الأمثلة التمهيدية ليست جزءًا من الدرجة.</strong> استفد منها في ضبط إيقاعك قبل بدء الاحتساب الفعلي.</li>'+
+'<li><strong>لغة الأسئلة الإنجليزية في الأقسام الثلاثة</strong>، بما فيها قسم الأشكال الذي لا يحتاج قراءة أصلًا.</li></ul>'+
+'<div class="callout"><h3>خطوة يغفل عنها كثيرون</h3>'+
+'<p>الاختبار يُؤدّى أولًا عن بُعد. المتقدّم الذي يجتازه ويستوفي بقية الشروط قد يُطلب منه لاحقًا أداء نسخة قصيرة تحت المراقبة في أحد مكاتب التوظيف، والغرض التحقق من تطابق النتيجتين. التفاوت الكبير بين الأداءين يُعامل معاملة النتيجة غير الموثوقة.</p>'+
+'<p>النتيجة العملية: من يعرف مستواه الحقيقي ويؤدّي الاختبار بنفسه هو الوحيد الذي لا تُقلقه هذه المرحلة.</p></div></section>'+
+
+'<section><h2>القسم الأول — الاستدلال اللفظي</h2>'+
+'<p class="sec-note">30 سؤالًا في 17 دقيقة، أي أقل من 35 ثانية للسؤال. أسرع قسم إيقاعًا في الاختبار كله.</p>'+
+'<p>يُعرض عليك نص قصير بالإنجليزية تتبعه عبارات، ومطلوب تصنيف كل عبارة إلى واحد من ثلاثة: True أو False أو Can\'t Say. لن يُطلب منك رأيك ولا معرفتك السابقة، بل الحكم من داخل النص وحده.</p>'+
+'<div class="rulebox">'+
+'<p><b>True</b> — المعلومة مذكورة في النص، أو تلزم عنه لزومًا مباشرًا لا يحتمل غيره.</p>'+
+'<p><b>False</b> — النص يتناول المعلومة نفسها لكن بما يناقض العبارة.</p>'+
+'<p><b>Can\'t Say</b> — النص لا يتعرّض للمعلومة أصلًا، فلا يؤكدها ولا ينفيها.</p></div>'+
+'<p style="margin-top:18px">الخيار الثالث هو مربط الفرس، وأكثر الأخطاء وقوعًا اختيار True لعبارة معقولة منطقيًا لكن النص لم يذكرها. القاعدة الحاسمة: إن احتجت خطوة استنتاج واحدة من خارج النص لتصل إلى العبارة، فالجواب Can\'t Say.</p>'+
+'<h3 style="font-size:1rem;margin:22px 0 8px">إشارات لغوية تحسم كثيرًا من الأسئلة</h3><ul class="plain">'+
+'<li>ألفاظ الإطلاق — <span class="mono">all, only, never, always, sole, none</span> — نادرًا ما تكون True، لأن النص غالبًا يقول «بعض» لا «كل».</li>'+
+'<li>ألفاظ التوقّع — <span class="mono">expects, aims, hopes, is likely to</span> — تجعل الحدث توقّعًا لا حقيقة. «الشركة تتوقّع X» عبارة True، أما «X سيحدث» فهي Can\'t Say.</li>'+
+'<li>ألفاظ المقارنة — <span class="mono">more, most, main, primary</span> — تحتاج مقارنة صريحة في النص. إن لم يُقارن النص، فالعبارة Can\'t Say.</li>'+
+'<li>السببية — النص قد يذكر أن أمرين حدثا معًا دون أن ينسب أحدهما للآخر. تحويل التزامن إلى سببية خطأ شائع.</li></ul>'+
+'<p style="margin-top:14px">أسلوبيًا: اقرأ العبارة أولًا ثم ابحث عن موضعها في النص، لا العكس. قراءة النص كاملًا لكل عبارة تستهلك وقتًا لا تملكه في هذا القسم تحديدًا.</p></section>'+
+
+'<section><h2>القسم الثاني — الاستدلال العددي</h2>'+
+'<p class="sec-note">17 سؤالًا في 18 دقيقة. الوقت هنا أسخى نسبيًا، والصعوبة في قراءة الجدول لا في الحساب.</p>'+
+'<p>تُعطى جداول ورسومًا بيانية وأسئلة حسابية. الآلة الحاسبة متاحة، فالعملية الحسابية ليست العائق. العائق مكانان: أن تفهم ماذا يُطلب بالضبط، وأن تعرف أي رقم تحتاجه وأيّها موضوع ليُشتّتك. أكثر الأخطاء ليست حسابية بل قراءة عمود بدل عمود، أو إغفال وحدة القياس.</p>'+
+'<h3 style="font-size:1rem;margin:22px 0 8px">القوانين التي تكفيك</h3>'+
+'<div class="tbl-scroll"><table><thead><tr><th>الحالة</th><th>القانون</th></tr></thead><tbody>'+
+'<tr><td>نسبة التغيّر</td><td><span class="mono">% = (new − old) ÷ old × 100</span></td></tr>'+
+'<tr><td>القيمة بعد زيادة أو نقص</td><td><span class="mono">new = old × (1 ± %)</span></td></tr>'+
+'<tr><td>القيمة الأصلية من الجديدة</td><td><span class="mono">old = new ÷ (1 ± %)</span></td></tr>'+
+'<tr><td>نصيب جزء من كل</td><td><span class="mono">%A = A ÷ Total × 100</span></td></tr>'+
+'<tr><td>الجزء من النسبة</td><td><span class="mono">A = Total × %A</span></td></tr>'+
+'<tr><td>الكل من الجزء ونسبته</td><td><span class="mono">Total = A ÷ %A</span></td></tr>'+
+'<tr><td>نسبة أ إلى ب</td><td><span class="mono">A ÷ B × 100</span></td></tr>'+
+'<tr><td>تبسيط النسبة</td><td>اقسم الطرفين على الرقم الأصغر</td></tr>'+
+'<tr><td>من عملة قوية إلى ضعيفة</td><td>اضرب في سعر الصرف</td></tr>'+
+'<tr><td>من عملة ضعيفة إلى قوية</td><td>اقسم على سعر الصرف</td></tr>'+
+'<tr><td>قيمة الأسهم</td><td>المبلغ = عدد الأسهم × سعر السهم</td></tr>'+
+'<tr><td>التكلفة</td><td>الإجمالي = عدد القطع × تكلفة القطعة</td></tr>'+
+'</tbody></table></div>'+
+'<div class="callout"><h3>الفخّ الأكثر تكرارًا</h3>'+
+'<p>«زاد بنسبة 20% ثم نقص بنسبة 20%» لا يعيدك إلى نقطة البداية. الأولى تُحسب على القيمة القديمة والثانية على الجديدة، والنتيجة أقل من الأصل بـ 4%. أي سؤال فيه تغيّران متتاليان يستحق تمهّلًا.</p></div></section>'+
+
+'<section><h2>القسم الثالث — الاستدلال الاستقرائي</h2>'+
+'<p class="sec-note">24 سؤالًا في 24 دقيقة. لا لغة ولا رياضيات — أشكال فقط.</p>'+
+'<p>يُعرض عليك تسلسل من الأشكال، ومطلوب استنتاج القاعدة التي تحكمه ثم اختيار الشكل التالي أو الشكل الشاذ. القاعدة لا تكون واحدة عادة، بل متغيّران أو ثلاثة تعمل في وقت واحد وكل منها مستقل عن الآخر.</p>'+
+'<h3 style="font-size:1rem;margin:22px 0 8px">أنواع الأنماط</h3><ul class="plain">'+
+'<li><strong>الحركة</strong> — عنصر ينتقل بمقدار ثابت في كل خطوة، على محيط الشكل أو داخل شبكة أو حول زواياه.</li>'+
+'<li><strong>الدوران</strong> — الشكل نفسه يدور بزاوية ثابتة، مع عقارب الساعة أو عكسها.</li>'+
+'<li><strong>العدد</strong> — عدد العناصر يزيد أو ينقص بمقدار ثابت، وقد يتبع تسلسلًا لا زيادة ثابتة.</li>'+
+'<li><strong>التظليل</strong> — تبادل بين ممتلئ وفارغ، أو انتقال التظليل من عنصر لآخر.</li>'+
+'<li><strong>الانعكاس</strong> — الشكل ينقلب أفقيًا أو رأسيًا، وهو أصعب ما يُخلط بالدوران.</li>'+
+'<li><strong>الحجم</strong> — تكبّر أو تصغّر تدريجي.</li>'+
+'<li><strong>التبادل</strong> — عنصران يتبادلان مواقعهما بانتظام.</li></ul>'+
+'<div class="callout"><h3>الطريقة العملية</h3>'+
+'<p>لا تحاول رؤية القاعدة كاملة دفعة واحدة. افحص متغيّرًا واحدًا عبر جميع الأشكال — الموقع مثلًا — وتجاهل ما عداه، ثم عد وافحص الثاني. أغلب من يتعثّر في هذا القسم يتعثّر لأنه يبحث عن قاعدة واحدة تفسّر كل ما يراه.</p>'+
+'<p>وإذا حدّدت متغيّرًا واحدًا بثقة، استخدمه لاستبعاد الخيارات قبل إكمال تحليل البقية. غالبًا يكفي متغيّران لحصر الجواب في خيار واحد.</p></div></section>'+
+
+'<section><h2>كيف تُقرأ نتيجتك</h2>'+
+'<p class="sec-note">لا توجد «درجة نجاح» ثابتة في هذا الاختبار.</p>'+
+'<p>النتيجة تُعطى كترتيب مئيني، أي موقعك مقارنةً بمجموعة مرجعية ممن أدّوا الاختبار قبلك. المئين 80 يعني أن أداءك تجاوز 80% من تلك المجموعة، لا أنك أجبت عن 80% من الأسئلة إجابة صحيحة. لذلك فسؤال «كم سؤالًا يجب أن أحلّ لأنجح؟» سؤال بلا إجابة.</p>'+
+'<p>التقرير التفصيلي يذهب إلى جهة التوظيف لا إليك، وغالبًا لن ترى درجتك الرقمية. وبما أن الجداول المرجعية غير منشورة، فأي رقم متداول كـ«حد النجاح» هو اجتهاد لا معلومة مؤكدة.</p></section>'+
+
+'<section><h2>خطة تحضير</h2>'+
+'<p class="sec-note">أسبوعان يكفيان إذا كان الوقت منظّمًا. الهدف تقصير زمن التعرّف على نوع السؤال، لا حفظ أسئلة.</p><ul class="plain">'+
+'<li><strong>ابدأ بمحاكاة كاملة قبل أي مراجعة.</strong> الغرض تشخيصي: أن تعرف أي قسم يستنزف وقتك، لتوجّه التدريب إليه بدل توزيعه بالتساوي.</li>'+
+'<li><strong>درّب القسم الأضعف بلا ساعة أولًا.</strong> الدقة قبل السرعة. راجع كل خطأ وحدّد: سوء فهم أم تسرّع؟ الفرق يحدّد علاجه.</li>'+
+'<li><strong>أعد الوقت تدريجيًا.</strong> ثم درّب نفسك على قرار الترك: السؤال الذي لم تجد له مدخلًا خلال أول عشرين ثانية، خمّن فيه وانتقل.</li>'+
+'<li><strong>هيّئ الجلسة نفسها.</strong> غرفة هادئة، اتصال ثابت، ورقة وقلم وآلة حاسبة، ووقت لا يقاطعك فيه أحد.</li></ul>'+
+'<div class="callout"><h3>ابدأ التدريب</h3>'+
+'<p>تبويب «التدريب» في الأعلى يحتوي بنكًا من الأسئلة الأصلية في الأقسام الثلاثة، ويعمل بوضعين: مراجعة محلولة يظهر فيها الشرح، ومحاكاة مؤقتة بلا حلول حتى تنتهي.</p></div></section>';
+
+GUIDE.en=
+'<div class="hero"><h1>Three sections, three unrelated skills — and <em>what each one measures</em></h1>'+
+'<p class="lede">The SHL assessment is not a knowledge test. There is no syllabus to memorise. What it measures is how you handle incomplete information under time pressure. This guide covers each section, the rules and patterns you actually need, and then original practice in two modes: worked review, and a timed simulation with answers hidden.</p>'+
+'<ul class="spec">'+
+'<li><span class="k">Section one — Verbal</span><span class="v">30 questions</span><span class="s">in 17 minutes</span></li>'+
+'<li><span class="k">Section two — Numerical</span><span class="v">17 questions</span><span class="s">in 18 minutes</span></li>'+
+'<li><span class="k">Section three — Inductive</span><span class="v">24 questions</span><span class="s">in 24 minutes</span></li>'+
+'</ul></div>'+
+
+'<section><h2>Before you start — practical points</h2>'+
+'<p class="sec-note">Administrative details that catch out most first-time candidates.</p><ul class="plain">'+
+'<li><strong>The sections are separate.</strong> You do not have to sit them in one session. Each can be taken at a different time, as long as all three are finished before your deadline.</li>'+
+'<li><strong>The deadline expires on the evening of the closing date.</strong> If your date is 19/9, the test closes late that night, not the day before.</li>'+
+'<li><strong>The time quoted in the invitation email is longer than the actual question time.</strong> The difference covers signing in, setting up your device and working through the practice items, so do not count it as solving time.</li>'+
+'<li><strong>The practice items are not scored.</strong> Use them to settle into a rhythm before the real timing begins.</li>'+
+'<li><strong>All three sections are in English</strong>, including the shapes section, which involves no reading at all.</li></ul>'+
+'<div class="callout"><h3>The step most people overlook</h3>'+
+'<p>The assessment is first taken remotely and unsupervised. A candidate who passes it and meets the other criteria may later be asked to sit a shorter, supervised version at an employment office, so the two results can be compared. A large gap between the two performances is treated as an unreliable result.</p>'+
+'<p>In practice this means that knowing your own real level and sitting the test yourself is the only position from which that stage holds no risk.</p></div></section>'+
+
+'<section><h2>Section one — Verbal Reasoning</h2>'+
+'<p class="sec-note">30 questions in 17 minutes: under 35 seconds each. The fastest-paced section of the whole assessment.</p>'+
+'<p>You are given a short passage followed by statements, and you classify each statement as True, False or Can\'t Say. Your opinion and your background knowledge are irrelevant; the judgement is made from inside the passage alone.</p>'+
+'<div class="rulebox">'+
+'<p><b>True</b> — the passage states it, or it follows from the passage directly and admits no other reading.</p>'+
+'<p><b>False</b> — the passage addresses the same point and contradicts the statement.</p>'+
+'<p><b>Can\'t Say</b> — the passage does not deal with the point at all, so it neither confirms nor denies it.</p></div>'+
+'<p style="margin-top:18px">The third option is where the section is won or lost. The commonest error is marking True for a statement that is perfectly reasonable but simply is not in the passage. The decisive rule: if you need one inferential step from outside the text to reach the statement, the answer is Can\'t Say.</p>'+
+'<h3 style="font-size:1rem;margin:22px 0 8px">Wording signals that settle many questions</h3><ul class="plain">'+
+'<li>Absolutes — <span class="mono">all, only, never, always, sole, none</span> — are rarely True, because passages usually say "some" rather than "all".</li>'+
+'<li>Expectation verbs — <span class="mono">expects, aims, hopes, is likely to</span> — make the event a projection, not a fact. "The company expects X" is True; "X will happen" is Can\'t Say.</li>'+
+'<li>Comparatives — <span class="mono">more, most, main, primary</span> — need an explicit comparison in the passage. If the passage never compares, the statement is Can\'t Say.</li>'+
+'<li>Causation — a passage may report that two things happened without attributing one to the other. Turning co-occurrence into cause is a frequent trap.</li></ul>'+
+'<p style="margin-top:14px">On method: read the statement first, then locate it in the passage, not the other way round. Re-reading the whole passage for every statement costs time you do not have in this section.</p></section>'+
+
+'<section><h2>Section two — Numerical Reasoning</h2>'+
+'<p class="sec-note">17 questions in 18 minutes. The pace is more generous here; the difficulty lies in reading the table, not in the arithmetic.</p>'+
+'<p>You are given tables, charts and calculation questions. A calculator is allowed, so the arithmetic itself is not the obstacle. The obstacles are two: understanding precisely what is being asked, and knowing which figure you need and which is there to distract you. Most errors are not arithmetic but reading the wrong column, or missing the unit of measurement.</p>'+
+'<h3 style="font-size:1rem;margin:22px 0 8px">The formulas that cover it</h3>'+
+'<div class="tbl-scroll"><table><thead><tr><th>Situation</th><th>Formula</th></tr></thead><tbody>'+
+'<tr><td>Percentage change</td><td><span class="mono">% = (new − old) ÷ old × 100</span></td></tr>'+
+'<tr><td>Value after a rise or fall</td><td><span class="mono">new = old × (1 ± %)</span></td></tr>'+
+'<tr><td>Original value from the new one</td><td><span class="mono">old = new ÷ (1 ± %)</span></td></tr>'+
+'<tr><td>Share of a total</td><td><span class="mono">%A = A ÷ Total × 100</span></td></tr>'+
+'<tr><td>Part from a percentage</td><td><span class="mono">A = Total × %A</span></td></tr>'+
+'<tr><td>Total from a part and its share</td><td><span class="mono">Total = A ÷ %A</span></td></tr>'+
+'<tr><td>A as a percentage of B</td><td><span class="mono">A ÷ B × 100</span></td></tr>'+
+'<tr><td>Simplifying a ratio</td><td>Divide both sides by the smaller figure</td></tr>'+
+'<tr><td>Strong currency to weak</td><td>Multiply by the exchange rate</td></tr>'+
+'<tr><td>Weak currency to strong</td><td>Divide by the exchange rate</td></tr>'+
+'<tr><td>Share value</td><td>Amount = number of shares × price per share</td></tr>'+
+'<tr><td>Cost</td><td>Total = units × cost per unit</td></tr>'+
+'</tbody></table></div>'+
+'<div class="callout"><h3>The most frequent trap</h3>'+
+'<p>"Up 20%, then down 20%" does not return you to the starting point. The rise is calculated on the old value and the fall on the new one, leaving you 4% below the original. Any question with two consecutive changes deserves a pause.</p></div></section>'+
+
+'<section><h2>Section three — Inductive Reasoning</h2>'+
+'<p class="sec-note">24 questions in 24 minutes. No language and no arithmetic — shapes only.</p>'+
+'<p>You are shown a sequence of figures and must work out the rule governing it, then pick the next figure or the odd one out. The rule is rarely single: two or three variables usually operate at once, each independent of the others.</p>'+
+'<h3 style="font-size:1rem;margin:22px 0 8px">Pattern types</h3><ul class="plain">'+
+'<li><strong>Movement</strong> — an element shifts by a fixed amount each step, around a perimeter, within a grid, or between corners.</li>'+
+'<li><strong>Rotation</strong> — the figure itself turns by a fixed angle, clockwise or anticlockwise.</li>'+
+'<li><strong>Count</strong> — the number of elements rises or falls by a fixed amount, or follows a sequence rather than a constant step.</li>'+
+'<li><strong>Shading</strong> — alternating between filled and empty, or shading passing from one element to another.</li>'+
+'<li><strong>Reflection</strong> — the figure flips horizontally or vertically. This is the one most often mistaken for rotation.</li>'+
+'<li><strong>Size</strong> — gradual enlargement or reduction.</li>'+
+'<li><strong>Swapping</strong> — two elements exchange positions at regular intervals.</li></ul>'+
+'<div class="callout"><h3>How to work through it</h3>'+
+'<p>Do not try to see the whole rule at once. Track one variable — position, say — across every figure while ignoring everything else, then go back and track the second. Most people who struggle here struggle because they are looking for a single rule that explains everything on screen.</p>'+
+'<p>Once you have pinned down one variable with confidence, use it to eliminate options before analysing the rest. Two variables are usually enough to leave one option standing.</p></div></section>'+
+
+'<section><h2>How your result is read</h2>'+
+'<p class="sec-note">There is no fixed pass mark on this assessment.</p>'+
+'<p>Your result is reported as a percentile: your standing relative to a norm group who took the test before you. The 80th percentile means you outperformed 80% of that group, not that you answered 80% of the questions correctly. This is why "how many questions do I need to get right to pass?" has no answer.</p>'+
+'<p>The detailed report goes to the employer rather than to you, and you will usually never see a numerical score. Since the norm tables are not published, any figure circulating as a "pass mark" is guesswork rather than fact.</p></section>'+
+
+'<section><h2>A preparation plan</h2>'+
+'<p class="sec-note">Two weeks is enough with organised time. The aim is to shorten how long you take to recognise a question type, not to memorise questions.</p><ul class="plain">'+
+'<li><strong>Start with a full simulation before revising anything.</strong> The purpose is diagnostic: find out which section drains your time, so you can aim your practice rather than spread it evenly.</li>'+
+'<li><strong>Drill your weakest section untimed first.</strong> Accuracy before speed. Review every error and label it: misunderstanding, or haste? The distinction determines the fix.</li>'+
+'<li><strong>Reintroduce the clock gradually.</strong> Then train the decision to abandon: if you have found no way into a question within the first twenty seconds, guess and move on.</li>'+
+'<li><strong>Prepare the sitting itself.</strong> A quiet room, a stable connection, paper, pen and a calculator within reach, and time when nobody will interrupt you.</li></ul>'+
+'<div class="callout"><h3>Start practising</h3>'+
+'<p>The Practice tab above holds a bank of original questions across all three sections, in two modes: a worked review with explanations shown, and a timed simulation with answers hidden until you finish.</p></div></section>';
+
+/* ══════════ بنك الأسئلة ══════════ */
+var VERBAL=[
+ {p:"A regional distributor opened a second warehouse in 2021 to shorten delivery times in the eastern province. Since then, its average delivery time has fallen from four days to two. The company has not reduced its delivery charges, although several competitors have. Management attributes the growth in customer numbers mainly to the faster service.",
+  s:[
+   {t:"Average delivery time halved after the second warehouse opened.",a:"T",
+    ar:"النص يذكر أن المتوسط انخفض من أربعة أيام إلى يومين، وهذا هو النصف بالضبط. حساب بسيط داخل النص، فالجواب True.",
+    en:"The passage gives four days falling to two, which is exactly half. A simple calculation carried out inside the text, so True."},
+   {t:"The distributor reduced its delivery charges after 2021.",a:"F",
+    ar:"النص يقول صراحة إن الشركة لم تخفّض رسوم التوصيل، والمنافسون هم من خفّضوا. العبارة تناقض النص، فالجواب False.",
+    en:"The passage states the company has not reduced its charges; the competitors are the ones who did. The statement contradicts the text, so False."},
+   {t:"The second warehouse is larger than the first.",a:"CS",
+    ar:"النص لم يذكر حجم أي من المستودعين. لا تأكيد ولا نفي، فالجواب Can't Say.",
+    en:"Neither warehouse's size is mentioned. Nothing confirms or denies it, so Can't Say."}
+  ]},
+ {p:"A software firm allowed staff to work remotely three days a week beginning in March. Reported overtime hours fell in the following quarter, while the number of internal meetings rose. The firm did not change its salary structure. Some managers argue that the drop in overtime reflects better focus at home; others say tasks are simply being postponed.",
+  s:[
+   {t:"Overtime hours fell in the quarter following the start of the policy.",a:"T",
+    ar:"مذكور نصًّا: ساعات العمل الإضافي انخفضت في الربع التالي. True.",
+    en:"Stated directly: overtime fell in the following quarter. True."},
+   {t:"Managers agree on the reason for the drop in overtime.",a:"F",
+    ar:"النص يعرض رأيين متعارضين بين المديرين، فالاتفاق منفيّ صراحة. False.",
+    en:"The passage sets out two opposing views among managers, so agreement is explicitly ruled out. False."},
+   {t:"The policy will be extended to five days a week.",a:"CS",
+    ar:"لا شيء في النص عن التوسّع مستقبلًا. Can't Say.",
+    en:"Nothing in the passage addresses any future extension. Can't Say."}
+  ]},
+ {p:"Construction of a desalination plant was completed a year behind schedule. The delay was caused by the late delivery of imported pumps, not by a shortage of funds. Once operating, the plant supplied about a fifth of the city's water. The remainder continued to come from existing sources.",
+  s:[
+   {t:"The plant was finished later than originally planned.",a:"T",
+    ar:"«a year behind schedule» تعني تأخّرًا سنة عن الجدول المقرّر. مذكور نصًّا. True.",
+    en:"\"A year behind schedule\" means it finished a year later than planned. Stated directly. True."},
+   {t:"The plant supplies most of the city's water.",a:"F",
+    ar:"النص يحدّد الخُمس تقريبًا، والباقي من مصادر أخرى. «معظم» يناقض ذلك. False.",
+    en:"The passage says about a fifth, with the remainder from elsewhere. \"Most\" contradicts that. False."},
+   {t:"The pumps were ordered later than the rest of the equipment.",a:"CS",
+    ar:"النص يتحدّث عن تأخّر التسليم لا عن تأخّر الطلب، والفرق بين الأمرين حقيقي. موعد الطلب غير مذكور إطلاقًا. Can't Say.",
+    en:"The passage refers to late delivery, not to late ordering, and the two are genuinely different. The ordering date is never mentioned. Can't Say."}
+  ]},
+ {p:"An airline introduced a simulator-based training programme for new technicians. Trainees who completed it required fewer supervised hours before certification than those trained by the previous method. The programme costs more per trainee to run. The airline has not stated whether it will replace the older method entirely.",
+  s:[
+   {t:"The new programme reduces the supervised hours needed before certification.",a:"T",
+    ar:"مذكور نصًّا في المقارنة مع الطريقة السابقة. True.",
+    en:"Stated directly in the comparison with the previous method. True."},
+   {t:"The new programme is cheaper per trainee than the older method.",a:"F",
+    ar:"النص يقول إنها أعلى تكلفة للمتدرّب الواحد. False.",
+    en:"The passage says it costs more per trainee. False."},
+   {t:"The older training method will be discontinued.",a:"CS",
+    ar:"النص يقول صراحة إن الشركة لم تُعلن موقفها. عدم الإعلان ليس نفيًا، فالجواب Can't Say لا False.",
+    en:"The passage says the airline has not stated its position. Saying nothing is not the same as denying, so Can't Say rather than False."}
+  ]},
+ {p:"A supermarket chain replaced paper price labels with electronic displays in twelve of its branches. Staff time spent on price updates fell sharply. Pricing errors reported by customers also declined, although the chain has not published figures. The displays require an initial investment that the chain expects to recover within three years.",
+  s:[
+   {t:"Pricing errors reported by customers went down.",a:"T",
+    ar:"مذكور نصًّا. عدم نشر الأرقام لا ينفي حدوث الانخفاض. True.",
+    en:"Stated directly. Not publishing the figures does not undo the decline itself. True."},
+   {t:"The chain published figures for the decline in pricing errors.",a:"F",
+    ar:"النص يذكر الانخفاض ثم يستدرك بأن السلسلة لم تنشر أرقامًا. العبارة تثبت النشر، فتناقض النص مباشرة. False. وانتبه للفرق: حدوث الانخفاض True، ونشر أرقامه False.",
+    en:"The passage reports the decline and then adds that the chain has published no figures. The statement asserts publication, which contradicts the text directly. False. Note the split: the decline itself is True; publishing figures for it is False."},
+   {t:"The investment will be recovered within three years.",a:"CS",
+    ar:"النص يقول إن الشركة «تتوقّع» الاسترداد خلال ثلاث سنوات. التوقّع ليس حدوثًا. لو كانت العبارة «الشركة تتوقّع الاسترداد» لكانت True — لكنها صيغت كحقيقة، فالجواب Can't Say.",
+    en:"The passage says the chain expects to recover it within three years. An expectation is not an outcome. \"The chain expects to recover it\" would be True; phrased as a fact, it is Can't Say."}
+  ]},
+ {p:"A municipality began collecting sorted household waste weekly rather than fortnightly. Participation rose during the first six months, particularly in districts where collection points were within walking distance. The municipality did not impose fines for non-participation. Officials say convenience matters more than penalties.",
+  s:[
+   {t:"Waste collection became more frequent than before.",a:"T",
+    ar:"الانتقال من كل أسبوعين إلى كل أسبوع زيادة في التكرار. True.",
+    en:"Moving from fortnightly to weekly is an increase in frequency. True."},
+   {t:"Households that did not participate were fined.",a:"F",
+    ar:"النص ينصّ على أن البلدية لم تفرض غرامات على عدم المشاركة، ويضيف على لسان المسؤولين أن السهولة أجدى من العقوبات. العبارة تقول عكس ذلك تمامًا. False.",
+    en:"The passage states that the municipality imposed no fines for non-participation, and adds officials' view that convenience matters more than penalties. The statement says the opposite outright. False."},
+   {t:"Participation rose most in the most densely populated districts.",a:"CS",
+    ar:"النص ربط الارتفاع بقرب نقاط التجميع سيرًا، لا بالكثافة السكانية. الربط بين الأمرين استنتاج من خارج النص. Can't Say.",
+    en:"The passage links the rise to collection points being within walking distance, not to population density. Connecting the two is an inference from outside the text. Can't Say."}
+  ]},
+ {p:"A utility began cleaning the panels at its solar site every two weeks instead of monthly. Output rose by roughly 3% over the following quarter. Cleaning costs rose as well, although the utility says the additional output more than covers them. The site has been in operation since 2019.",
+  s:[
+   {t:"Cleaning costs fell after the change in schedule.",a:"F",ar:"النص يقول إن تكاليف التنظيف ارتفعت أيضًا. العبارة تناقضه. False.",en:"The passage says cleaning costs rose as well. The statement contradicts it. False."},
+   {t:"Output rose in the quarter following the change.",a:"T",ar:"مذكور نصًّا: الإنتاج ارتفع نحو 3% في الربع التالي. True.",en:"Stated directly: output rose by about 3% over the following quarter. True."},
+   {t:"The utility will apply the same schedule at its other sites.",a:"CS",ar:"النص لا يذكر مواقع أخرى ولا نية التوسّع. Can't Say.",en:"The passage mentions no other sites and no intention to expand the practice. Can't Say."}
+  ]},
+ {p:"A port replaced two of its older cranes in 2022. Average vessel turnaround time fell from 31 hours to 24. Congestion at the gate, which is handled by a separate operator, did not change. The port attributes the improvement to the new cranes rather than to lighter traffic, since volumes were higher in 2022 than in 2021.",
+  s:[
+   {t:"Vessel turnaround time improved after the cranes were replaced.",a:"T",ar:"انخفاض المتوسط من 31 ساعة إلى 24 تحسّن مذكور نصًّا. True.",en:"A fall from 31 hours to 24 is an improvement stated directly. True."},
+   {t:"Traffic volumes in 2022 were lower than in 2021.",a:"F",ar:"النص يقول العكس تمامًا: الأحجام كانت أعلى في 2022. False.",en:"The passage says the opposite: volumes were higher in 2022. False."},
+   {t:"The new cranes cost more than the ones they replaced.",a:"CS",ar:"لا ذكر لتكلفة أي من الرافعات. Can't Say.",en:"Neither crane's cost is mentioned. Can't Say."}
+  ]},
+ {p:"A company's graduate scheme received 4,000 applications last year and made 60 offers. Half of those who received offers had completed an internship with the company. The scheme is open to graduates of any discipline, although most successful candidates had studied engineering. The company does not disclose how applications are shortlisted.",
+  s:[
+   {t:"Thirty of those who received offers had interned with the company.",a:"T",ar:"نصف الستين هو ثلاثون. حساب مباشر داخل النص. True.",en:"Half of 60 is 30 — a direct calculation from the text. True."},
+   {t:"Only engineering graduates may apply to the scheme.",a:"F",ar:"النص يقول إن البرنامج مفتوح لخريجي أي تخصص. غلبة الهندسة بين المقبولين لا تعني حصر التقديم. False.",en:"The passage says the scheme is open to any discipline. Engineering dominating among those accepted does not restrict who may apply. False."},
+   {t:"Applicants who have interned are more likely to receive an offer than those who have not.",a:"CS",ar:"نعرف نصيب المتدرّبين من العروض، لكن لا نعرف نصيبهم من المتقدّمين. بلا هذا الرقم لا تُحسب أفضلية. Can't Say.",en:"We know interns' share of the offers but not their share of the applicants. Without that figure no advantage can be established. Can't Say."}
+  ]},
+ {p:"A logistics firm switched a third of its fleet to a newer engine model. Fuel consumption per kilometre fell for those vehicles. Maintenance intervals for the new engines are longer, but each service is more expensive. Drivers reported no difference in handling.",
+  s:[
+   {t:"Fuel consumption per kilometre fell across the entire fleet.",a:"F",ar:"الانخفاض يخصّ ثلث الأسطول الذي جرى تبديله فقط. تعميمه على الأسطول كله يناقض النص. False.",en:"The fall applies only to the third of the fleet that was switched. Generalising it to the whole fleet contradicts the text. False."},
+   {t:"The new engines are serviced less often than the older ones.",a:"T",ar:"فترات الصيانة أطول، ومعناها صيانة أقل تكرارًا. True.",en:"Longer maintenance intervals mean servicing less often. True."},
+   {t:"Total maintenance spending on the new engines is lower.",a:"CS",ar:"الفترات أطول لكن كل صيانة أغلى. الاتجاهان متعاكسان والنص لا يرجّح أيهما يغلب. Can't Say.",en:"Intervals are longer but each service costs more. The two pull in opposite directions and the passage does not say which prevails. Can't Say."}
+  ]},
+ {p:"A university digitised its thesis archive and made it searchable online. Requests for physical copies dropped by more than half in the first year. Citations of older theses rose over the same period. Staff who had previously retrieved physical copies were reassigned rather than made redundant.",
+  s:[
+   {t:"Requests for physical copies declined.",a:"T",ar:"مذكور نصًّا: انخفضت بأكثر من النصف. True.",en:"Stated directly: they dropped by more than half. True."},
+   {t:"The retrieval staff lost their jobs.",a:"F",ar:"النص يقول إنهم نُقلوا إلى مهام أخرى لا أنهم سُرّحوا. False.",en:"The passage says they were reassigned, not made redundant. False."},
+   {t:"Digitisation caused the rise in citations.",a:"CS",ar:"النص يذكر أن الأمرين حدثا في الفترة نفسها دون أن ينسب أحدهما للآخر. تحويل التزامن إلى سببية استنتاج من خارج النص. Can't Say.",en:"The passage reports that both happened in the same period without attributing one to the other. Turning co-occurrence into cause is an inference from outside the text. Can't Say."}
+  ]},
+ {p:"A refinery introduced a system that allows workers to log near-misses anonymously. The number of logged near-misses rose sharply in the first year. Recorded injuries fell over the same period. Management holds that the rise in reports reflects a greater willingness to report rather than a decline in safety.",
+  s:[
+   {t:"The number of logged near-misses increased.",a:"T",ar:"مذكور نصًّا: ارتفع بشكل حاد في السنة الأولى. True.",en:"Stated directly: it rose sharply in the first year. True."},
+   {t:"Recorded injuries increased over the same period.",a:"F",ar:"النص يفرّق بين رقمين: البلاغات ارتفعت والإصابات المسجّلة انخفضت. العبارة تنسب الارتفاع إلى الإصابات، وهذا خلط بين الرقمين ومناقضة للنص. False.",en:"The passage separates two figures: reports rose while recorded injuries fell. The statement attaches the rise to injuries, conflating the two and contradicting the text. False."},
+   {t:"Safety at the refinery deteriorated during the year.",a:"CS",ar:"ارتفاع البلاغات يحتمل تفسيرين، والنص ينقل تفسير الإدارة كرأي لا كحقيقة مثبتة. Can't Say.",en:"The rise in reports admits two readings, and the passage relays management's reading as a view rather than an established fact. Can't Say."}
+  ]},
+ {p:"A retail chain extended opening hours at its city-centre branches but not at its suburban ones. Sales at the city-centre branches rose by 7%. Staffing costs at those branches rose as well. The chain has said it will review the results before deciding on the suburban branches.",
+  s:[
+   {t:"Opening hours were extended at every branch in the chain.",a:"F",ar:"النص يستثني الفروع الطرفية صراحة. False.",en:"The passage explicitly excludes the suburban branches. False."},
+   {t:"Sales at the suburban branches fell.",a:"CS",ar:"النص لا يذكر مبيعات الفروع الطرفية إطلاقًا. Can't Say.",en:"The passage says nothing about sales at the suburban branches. Can't Say."},
+   {t:"Staffing costs rose at the city-centre branches.",a:"T",ar:"النص يذكر ارتفاع المبيعات 7% في فروع وسط المدينة ثم يضيف أن تكاليف التوظيف فيها ارتفعت أيضًا. لفظ as well يربط الارتفاع بالفروع نفسها. True.",en:"The passage records a 7% rise in city-centre sales and then adds that staffing costs at those branches rose as well. The phrase ties the increase to the same branches. True."}
+  ]},
+ {p:"A municipality installed smart water meters across one district. Households there received monthly consumption reports for the first time. Average consumption in the district fell by 9% over the following year. Consumption in neighbouring districts, which kept the old meters, was broadly unchanged.",
+  s:[
+   {t:"Households in the district had not previously received monthly consumption reports.",a:"T",ar:"عبارة for the first time تعني أنهم لم يتلقّوها من قبل. True.",en:"\"For the first time\" means they had not received them before. True."},
+   {t:"The neighbouring districts received smart meters at the same time.",a:"F",ar:"النص يقول إنها احتفظت بالعدادات القديمة. False.",en:"The passage says they kept the old meters. False."},
+   {t:"The monthly reports were the reason consumption fell.",a:"CS",ar:"النص يعرض الأرقام دون أن ينسب الانخفاض لسبب بعينه، رغم إغراء المقارنة مع الأحياء المجاورة. Can't Say.",en:"The passage sets out the figures without attributing the fall to any one cause, however tempting the comparison with the neighbouring districts. Can't Say."}
+  ]},
+ {p:"An agency reduced its average time-to-hire from 47 days to 35 after introducing structured interviews. Client satisfaction scores improved. The agency's fee structure was unchanged. Some recruiters have said the structured format makes it harder to assess candidates who interview poorly but perform well on the job.",
+  s:[
+   {t:"Time-to-hire fell by twelve days on average.",a:"T",ar:"الفرق بين 47 و35 هو 12 يومًا. حساب مباشر. True.",en:"The difference between 47 and 35 is 12 days — a direct calculation. True."},
+   {t:"The agency raised its fees after introducing structured interviews.",a:"F",ar:"النص يقول إن هيكل الأتعاب لم يتغيّر. False.",en:"The passage says the fee structure was unchanged. False."},
+   {t:"The structured interviews caused the improvement in client satisfaction.",a:"CS",ar:"التحسّن مذكور، لكن النص لا ينسبه للمقابلات المنظّمة. Can't Say.",en:"The improvement is stated, but the passage does not attribute it to the structured interviews. Can't Say."}
+  ]},
+ {p:"A government scheme subsidises half the cost of accredited technical courses for employees of small firms. Uptake in the first year was lower than projected. A survey of eligible firms found that many were unaware the scheme existed. The scheme does not cover courses taken by the self-employed.",
+  s:[
+   {t:"The scheme covers the full cost of accredited technical courses.",a:"F",ar:"النص يحدّد أن الدعم يغطي نصف التكلفة. «كامل التكلفة» يناقض هذا التحديد. False — وهذا نمط متكرر: النص يعطي كسرًا والعبارة تحوّله إلى إطلاق.",en:"The passage specifies that the subsidy covers half the cost. \"The full cost\" contradicts that figure. False — and this is a recurring pattern: the passage gives a fraction and the statement turns it into an absolute."},
+   {t:"The self-employed are not eligible under the scheme.",a:"T",ar:"النص ينصّ على أن البرنامج لا يغطي دورات العاملين لحسابهم. True.",en:"The passage states the scheme does not cover courses taken by the self-employed. True."},
+   {t:"Lack of awareness was the main reason for the low uptake.",a:"CS",ar:"النص يذكر أن كثيرًا من المنشآت لم تكن تعلم، لكنه لا يجعل ذلك السبب الرئيسي. لفظ «الرئيسي» يحتاج ترجيحًا صريحًا. Can't Say.",en:"The passage says many firms were unaware, but never makes that the main reason. \"Main\" requires an explicit ranking. Can't Say."}
+  ]},
+ {p:"An airport introduced a system that lets drivers reserve a parking space in advance. Occupancy of the long-stay car park rose, while occupancy of the short-stay park was unchanged. Drivers who book in advance pay a lower rate than those who arrive without a reservation. The airport has not published the proportion of spaces now booked ahead.",
+  s:[
+   {t:"Drivers who book in advance pay less than those who do not.",a:"T",ar:"مذكور نصًّا: سعر الحجز المسبق أقل. True.",en:"Stated directly: the advance rate is lower. True."},
+   {t:"The airport has published the share of spaces booked in advance.",a:"F",ar:"النص ينتهي بأن المطار لم ينشر نسبة الأماكن المحجوزة مسبقًا. العبارة تثبت النشر فتناقضه. False. ولاحظ أن عدم النشر لا يعني عدم وجود الرقم، لكنه يكفي لنفي هذه العبارة تحديدًا.",en:"The passage closes by saying the airport has not published the proportion of spaces booked ahead. The statement asserts publication and so contradicts it. False. Note that withholding a figure does not mean it does not exist, but it is enough to falsify this particular statement."},
+   {t:"The booking system caused the rise in long-stay occupancy.",a:"CS",ar:"الارتفاع مذكور، لكن النص لا ينسبه للنظام. Can't Say.",en:"The rise is stated, but the passage does not attribute it to the system. Can't Say."}
+  ]},
+ {p:"A textile factory moved from one shift to two. Monthly output nearly doubled, but the defect rate on the night shift is higher than on the day shift. Supervisors on the night shift have less experience on average. The factory applies the same quality inspection procedure on both shifts.",
+  s:[
+   {t:"The inspection procedure differs between the two shifts.",a:"F",ar:"النص يقول إن الإجراء نفسه مطبّق على الورديتين. False.",en:"The passage says the same procedure applies on both shifts. False."},
+   {t:"Night-shift supervisors are on average less experienced.",a:"T",ar:"النص يقولها صراحة، ومعها لفظ on average الذي يجعلها وصفًا للمتوسط لا لكل مشرف. العبارة نقلت القيد نفسه، فلم تتجاوز النص. True.",en:"The passage says so explicitly, with \"on average\" making it a claim about the mean rather than about every supervisor. The statement carries the same qualifier, so it does not overreach. True."},
+   {t:"The supervisors' inexperience explains the higher defect rate.",a:"CS",ar:"النص يذكر الأمرين جنبًا إلى جنب دون أن يجعل أحدهما سببًا للآخر. Can't Say.",en:"The passage sets the two facts side by side without making one the cause of the other. Can't Say."}
+  ]},
+ {p:"A hospital introduced text-message reminders for outpatient appointments. Missed appointments fell over the following six months. The reminders are sent two days before the appointment. Patients without a registered mobile number continue to receive letters.",
+  s:[
+   {t:"Reminders are sent on the day of the appointment.",a:"F",ar:"النص يحدّد أن التذكير يُرسل قبل الموعد بيومين. تحديد وقت مختلف يناقض التحديد المذكور. False.",en:"The passage specifies that reminders go out two days before the appointment. Naming a different timing contradicts the figure given. False."},
+   {t:"Some patients still receive reminders by letter.",a:"T",ar:"من ليس لديهم رقم مسجّل يستمرّون في تلقّي الرسائل البريدية. True.",en:"Patients with no registered mobile number continue to receive letters. True."},
+   {t:"Text reminders are more effective than letters.",a:"CS",ar:"لا مقارنة في النص بين فعالية الوسيلتين. Can't Say.",en:"The passage makes no comparison between the effectiveness of the two channels. Can't Say."}
+  ]},
+ {p:"A city introduced a bus lane on its busiest corridor. Average bus journey times fell by 11 minutes. Journey times for private cars on the same corridor rose slightly. Ridership on the route increased over the following year, although fares were also reduced during that period.",
+  s:[
+   {t:"Bus journey times improved on the corridor.",a:"T",ar:"انخفاض 11 دقيقة تحسّن مذكور نصًّا. True.",en:"A fall of 11 minutes is an improvement stated directly. True."},
+   {t:"Journey times for private cars also improved.",a:"F",ar:"النص يقول إن أزمنة السيارات الخاصة ارتفعت قليلًا على المسار نفسه. الارتفاع عكس التحسّن، فالعبارة مناقضة. False — ولاحظ أن lightly لا تلغي الاتجاه.",en:"The passage says journey times for private cars rose slightly on the same corridor. A rise is the opposite of an improvement, so the statement is contradicted. False — and \"slightly\" does not reverse the direction."},
+   {t:"The bus lane was responsible for the rise in ridership.",a:"CS",ar:"الأجرة خُفّضت في الفترة نفسها، فالسبب غير محسوم في النص. Can't Say.",en:"Fares were cut in the same period, so the passage does not settle the cause. Can't Say."}
+  ]},
+ {p:"A firm moved from quarterly software releases to monthly ones. The number of defects found by customers per release fell, although the total across the year was broadly unchanged. Support staff report that smaller releases are easier to roll back.",
+  s:[
+   {t:"The number of defects found per release fell.",a:"T",ar:"النص يفصل بين رقمين: العيوب لكل إصدار انخفضت، والإجمالي السنوي بقي كما هو. العبارة تخصّ الرقم الأول وقد ذُكر صراحة. True.",en:"The passage separates two figures: defects per release fell, while the annual total stayed broadly the same. The statement concerns the first figure, which is stated outright. True."},
+   {t:"The total number of defects across the year fell.",a:"F",ar:"النص يقول إن الإجمالي بقي دون تغيّر يُذكر. انخفاض المعدّل لكل إصدار لا يعني انخفاض الإجمالي، لأن عدد الإصدارات زاد. False.",en:"The passage says the annual total was broadly unchanged. A fall per release does not mean a fall in the total, since the number of releases rose. False."},
+   {t:"Customers prefer the monthly release schedule.",a:"CS",ar:"النص ينقل رأي فريق الدعم لا رأي العملاء. Can't Say.",en:"The passage relays the support team's view, not the customers'. Can't Say."}
+  ]},
+ {p:"A farm replaced flood irrigation with drip irrigation on half its land. Water use on that land fell by about 40%. Yields on the drip-irrigated land were slightly higher than on the rest. The initial cost of the system was met partly by a government grant.",
+  s:[
+   {t:"Water use fell on the land that was converted.",a:"T",ar:"مذكور نصًّا: انخفض نحو 40% على تلك الأرض. True.",en:"Stated directly: it fell by about 40% on that land. True."},
+   {t:"The farm met the entire cost of the drip system itself.",a:"F",ar:"النص يذكر أن منحة حكومية غطّت جزءًا من التكلفة. False.",en:"The passage says a government grant covered part of the cost. False."},
+   {t:"Drip irrigation will be extended to the remaining land.",a:"CS",ar:"النص يصف ما جرى على نصف الأرض ولا يتطرّق لأي نية مستقبلية. غياب النية ليس نفيًا لها، ولذلك الجواب Can't Say لا False.",en:"The passage describes what was done on half the land and says nothing about any future intention. The absence of a stated plan is not a denial of one, which is why this is Can't Say rather than False."}
+  ]},
+ {p:"An insurer began settling small motor claims through an app rather than by telephone. Average settlement time fell from nine days to four. Complaints about settlement amounts were unchanged. Claims above a set value continue to be handled by an assessor.",
+  s:[
+   {t:"Average settlement time more than halved.",a:"T",ar:"نصف التسعة هو 4.5، والزمن الجديد 4 أيام أي أقل من النصف. حساب دقيق داخل النص. True.",en:"Half of nine is 4.5, and the new time is four days — less than half. A precise calculation inside the text. True."},
+   {t:"All motor claims are now settled through the app.",a:"F",ar:"النص يستثني المطالبات فوق قيمة معيّنة. لفظ «كل» نادرًا ما يصمد. False.",en:"The passage excludes claims above a set value. Absolutes rarely survive. False."},
+   {t:"Customers are more satisfied with the app than with the telephone service.",a:"CS",ar:"الشكاوى عن المبالغ لم تتغيّر، وهذا لا يقيس الرضا عن الوسيلة. Can't Say.",en:"Complaints about amounts were unchanged, which does not measure satisfaction with the channel. Can't Say."}
+  ]},
+ {p:"A cement plant replaced part of its fuel mix with processed waste. Carbon emissions per tonne of cement fell. Total emissions from the plant rose, because output increased over the same period. The plant reports both figures in its annual disclosure.",
+  s:[
+   {t:"Emissions per tonne of cement decreased.",a:"T",ar:"النص يذكر رقمين متعاكسين: الانبعاثات لكل طن انخفضت، والإجمالي ارتفع. العبارة تخصّ الكثافة لا الإجمالي، وهي مذكورة نصًّا. True.",en:"The passage gives two figures that move in opposite directions: emissions per tonne fell while the total rose. The statement concerns intensity rather than the total, and is stated directly. True."},
+   {t:"Total emissions from the plant decreased.",a:"F",ar:"النص يقول إن الإجمالي ارتفع بسبب زيادة الإنتاج. انخفاض الكثافة لا يعني انخفاض الإجمالي، وهذا التمييز يتكرر كثيرًا. False.",en:"The passage says the total rose because output increased. A fall in intensity is not a fall in the total — a distinction that recurs often. False."},
+   {t:"Output would have risen even without the change in fuel mix.",a:"CS",ar:"سؤال افتراضي لا يتناوله النص. Can't Say.",en:"A hypothetical the passage does not address. Can't Say."}
+  ]},
+ {p:"A bank offered optional English classes to branch staff. Attendance was highest among staff with fewer than three years' service. Staff who completed the course were no more likely to be promoted in the following year than those who did not. The bank intends to run the course again.",
+  s:[
+   {t:"The course was compulsory for branch staff.",a:"F",ar:"النص يصف الدروس بأنها optional، أي اختيارية. الإلزام يناقض الوصف صراحة. False.",en:"The passage describes the classes as optional. Compulsory attendance contradicts that description outright. False."},
+   {t:"The bank plans to run the course again.",a:"T",ar:"النص ينتهي بأن البنك ينوي إعادة الدورة. النية مذكورة صراحة، والعبارة نقلتها كنيّة لا كحدث واقع، فلم تتجاوز النص. True.",en:"The passage ends by saying the bank intends to run the course again. The intention is stated explicitly, and the statement reports it as an intention rather than an accomplished fact, so it does not overreach. True."},
+   {t:"Longer-serving staff found the course too basic.",a:"CS",ar:"النص يذكر ضعف حضورهم لا سببه. تفسير الضعف استنتاج من خارج النص. Can't Say.",en:"The passage reports their lower attendance, not the reason for it. Explaining it is an inference from outside the text. Can't Say."}
+  ]},
+ {p:"A retailer automated picking in one of its four warehouses. Orders processed per hour at that site rose by a third. Headcount at the site fell, with affected staff offered roles at the other three warehouses. Error rates at the automated site are similar to those at the manual sites.",
+  s:[
+   {t:"Automation was introduced at all four warehouses.",a:"F",ar:"النص يحدّد مستودعًا واحدًا من أربعة. False.",en:"The passage specifies one warehouse out of four. False."},
+   {t:"Staff whose roles ended were offered work elsewhere in the company.",a:"T",ar:"مذكور نصًّا: عُرضت عليهم أدوار في المستودعات الثلاثة الأخرى. True.",en:"Stated directly: they were offered roles at the other three warehouses. True."},
+   {t:"The automated site is more profitable than the manual sites.",a:"CS",ar:"النص يعطي الإنتاجية ومعدّل الأخطاء لا الربحية. Can't Say.",en:"The passage gives throughput and error rates, not profitability. Can't Say."}
+  ]},
+ {p:"A school introduced weekly practice tests in mathematics. Average results in the end-of-year examination rose compared with the previous cohort. Attendance was unchanged. The school also replaced two mathematics teachers during the same year.",
+  s:[
+   {t:"Average mathematics results improved on the previous cohort.",a:"T",ar:"النص يقارن صراحة بالدفعة السابقة ويقول إن المتوسط ارتفع. المقارنة موجودة في النص فلا تحتاج افتراضًا. True.",en:"The passage compares explicitly with the previous cohort and says the average rose. The comparison is in the text, so nothing has to be assumed. True."},
+   {t:"Attendance declined during the year.",a:"F",ar:"النص يقول إن الحضور لم يتغيّر. الثبات ينفي الانخفاض، فالجواب False لا Can't Say — الفرق أن النص تناول الحضور فعلًا.",en:"The passage says attendance was unchanged. Stability rules out a decline, so this is False rather than Can't Say — the difference being that the passage does address attendance."},
+   {t:"The practice tests caused the improvement in results.",a:"CS",ar:"تبديل معلّمين حدث في السنة نفسها، فالنص لا يعزل أثر الاختبارات. Can't Say.",en:"Two teachers were replaced in the same year, so the passage does not isolate the effect of the tests. Can't Say."}
+  ]},
+ {p:"A data centre raised its operating temperature by two degrees. Cooling costs fell by 8%. Hardware failure rates over the following year were within the range recorded in previous years. The manufacturer's warranty permits operation at the higher temperature.",
+  s:[
+   {t:"Cooling costs decreased after the change.",a:"T",ar:"النص يعطي رقمًا محدّدًا: انخفاض 8% في تكاليف التبريد بعد رفع الحرارة درجتين. العبارة أعمّ من الرقم لكنها متسقة معه. True.",en:"The passage gives a specific figure: cooling costs fell 8% after the two-degree rise. The statement is broader than the figure but consistent with it. True."},
+   {t:"Operating at the higher temperature voids the manufacturer's warranty.",a:"F",ar:"النص يقول إن الضمان يسمح بالتشغيل عند الحرارة الأعلى. إبطال الضمان يناقض هذا السماح مباشرة. False.",en:"The passage says the warranty permits operation at the higher temperature. Voiding the warranty contradicts that permission directly. False."},
+   {t:"The higher temperature has no effect on hardware life.",a:"CS",ar:"سنة واحدة ضمن المدى المعتاد لا تثبت انتفاء الأثر. النص يعطي ملاحظة لا نفيًا. Can't Say.",en:"One year within the usual range does not establish an absence of effect. The passage offers an observation, not a denial. Can't Say."}
+  ]},
+ {p:"A freelance platform introduced a verified-identity badge. Freelancers holding the badge receive more invitations to bid than those without it. Verification requires submitting an official document and takes about three days. The platform charges no fee for verification.",
+  s:[
+   {t:"Verification is free of charge.",a:"T",ar:"مذكور نصًّا: لا تفرض المنصة رسومًا. True.",en:"Stated directly: the platform charges no fee. True."},
+   {t:"Verification is completed within a few hours.",a:"F",ar:"النص يحدّد نحو ثلاثة أيام. الساعات تناقض الأيام تناقضًا صريحًا في الرقم نفسه. False.",en:"The passage specifies about three days. Hours contradict days directly on the same figure. False."},
+   {t:"Badged freelancers earn more than unbadged ones.",a:"CS",ar:"عدد الدعوات أكثر، لكن الدخل شيء آخر لم يذكره النص. Can't Say.",en:"They receive more invitations, but earnings are a separate matter the passage does not address. Can't Say."}
+  ]},
+ {p:"A coastal town built a sea wall along one stretch of its shoreline. Flooding of properties behind the wall stopped. Erosion further along the coast, beyond the wall, has increased since it was built. Engineers disagree about whether the wall is responsible.",
+  s:[
+   {t:"Properties behind the wall no longer flood.",a:"T",ar:"النص يقول إن فيضان العقارات خلف الجدار توقّف. العبارة إعادة صياغة لهذا التوقّف. True — والقيد «خلف الجدار» موجود في العبارة كما في النص.",en:"The passage says flooding of the properties behind the wall stopped. The statement restates that. True — and the qualifier \"behind the wall\" appears in both."},
+   {t:"Engineers agree that the wall caused the increased erosion.",a:"F",ar:"النص يقول إن المهندسين مختلفون في المسألة. الاتفاق يناقض الاختلاف صراحة، فالجواب False. لكن انتبه: نسبة التعرية للجدار نفسها Can't Say لأن النص لم يحسمها.",en:"The passage says engineers disagree on the point. Agreement contradicts disagreement outright, so False. But note the distinction: attributing the erosion to the wall is itself Can't Say, since the passage does not settle it."},
+   {t:"The wall caused the increased erosion beyond it.",a:"CS",ar:"المسألة محلّ خلاف بين المختصين، والنص ينقل الخلاف دون ترجيح. Can't Say.",en:"The point is disputed among specialists, and the passage reports the dispute without settling it. Can't Say."}
+  ]}
+];
+
+var NUM=[
+ {stem:"A branch sold 120,000 SAR in Q1 2023 and 138,000 SAR in Q1 2024. What was the percentage growth?",
+  tbl:[["Year","Q1","Q2"],["2023","120","150"],["2024","138","171"],["(thousands)","",""]],
+  ch:["12%","15%","18%","20%"],a:1,
+  ar:"الفرق 18 من أصل 120. القانون: (new − old) ÷ old × 100 = 18 ÷ 120 × 100 = 15%. لاحظ أن عمود الربع الثاني موجود لكنه لا يدخل في السؤال إطلاقًا — هذا نمط التشتيت المتكرر.",
+  en:"The difference is 18 on a base of 120. Using (new − old) ÷ old × 100 = 18 ÷ 120 × 100 = 15%. Note that the Q2 column is present but plays no part in the question — that is the standard distractor pattern."},
+ {stem:"After a 25% increase, a machine's price is 90,000 SAR. What was the price before the increase?",
+  ch:["67,500 SAR","70,000 SAR","72,000 SAR","112,500 SAR"],a:2,
+  ar:"القانون: old = new ÷ (1 + %) = 90,000 ÷ 1.25 = 72,000. الخطأ الشائع هو طرح 25% من 90,000 مباشرة، وهذا يعطي 67,500 وهو الخيار الفخّ.",
+  en:"old = new ÷ (1 + %) = 90,000 ÷ 1.25 = 72,000. The common error is subtracting 25% from 90,000 directly, which gives 67,500 — the distractor."},
+ {stem:"A department's budget is 4,000,000 SAR. Training receives 6% of it. How much is that?",
+  ch:["24,000 SAR","240,000 SAR","2,400,000 SAR","400,000 SAR"],a:1,
+  ar:"القانون: A = Total × %A = 4,000,000 × 0.06 = 240,000. أكثر الأخطاء هنا خطأ في عدد الأصفار لا في الطريقة — تحقّق من رتبة الناتج دائمًا.",
+  en:"A = Total × %A = 4,000,000 × 0.06 = 240,000. Most errors here are in the number of zeros rather than the method — always sanity-check the order of magnitude."},
+ {stem:"The ratio of engineers to technicians on a site is 3 : 5. There are 45 engineers. How many technicians are there?",
+  ch:["27","60","75","135"],a:2,
+  ar:"من 3 إلى 45 المعامل هو 15. إذن الفنيون = 5 × 15 = 75. تنبّه لاتجاه النسبة: عكسها يعطي 27 وهو الخيار الفخّ.",
+  en:"Going from 3 to 45 gives a multiplier of 15, so technicians = 5 × 15 = 75. Watch the direction of the ratio: reversing it gives 27, the distractor."},
+ {stem:"1 USD = 3.75 SAR. A supplier invoices 12,000 SAR. What is the amount in USD?",
+  ch:["3,200 USD","4,500 USD","32,000 USD","45,000 USD"],a:0,
+  ar:"من العملة الضعيفة إلى القوية نقسم: 12,000 ÷ 3.75 = 3,200 دولارًا. الضرب بدل القسمة يعطي 45,000 وهو الفخّ. اختبار سريع للمنطق: عدد الدولارات يجب أن يكون أقل من عدد الريالات.",
+  en:"Weak currency to strong means dividing: 12,000 ÷ 3.75 = 3,200 USD. Multiplying instead gives 45,000, the distractor. Quick sanity check: the dollar figure must be smaller than the riyal figure."},
+ {stem:"An investor buys 1,500 shares at 46 SAR each. What is the total cost?",
+  ch:["6,900 SAR","69,000 SAR","690,000 SAR","32.6 SAR"],a:1,
+  ar:"المبلغ = عدد الأسهم × سعر السهم = 1,500 × 46 = 69,000 ريالًا. القانون نفسه يُقلب لإيجاد أي طرف مجهول: عدد الأسهم = المبلغ ÷ السعر.",
+  en:"Amount = shares × price = 1,500 × 46 = 69,000 SAR. The same relation rearranges for any unknown: shares = amount ÷ price."},
+ {stem:"Output over four months was 220, 260, 310 and 250 units. What was the monthly average?",
+  ch:["250","255","260","265"],a:2,
+  ar:"المجموع 1,040 على 4 شهور = 260. تنبّه: كثيرون يجمعون ثلاثة أرقام فقط تحت ضغط الوقت. أعد عدّ المدخلات قبل القسمة.",
+  en:"The total is 1,040 over 4 months = 260. Under time pressure many people add only three of the figures — recount the inputs before dividing."},
+ {stem:"A price rises by 20% and then falls by 20%. Compared with the original price, the final price is:",
+  ch:["the same","4% lower","4% higher","10% lower"],a:1,
+  ar:"الزيادة تُحسب على القيمة القديمة والنقص على الجديدة. 100 → 120 → 96، أي أقل بـ 4%. أي سؤال فيه تغيّران متتاليان يستحق تمهّلًا، فالتساوي هنا خطأ حدسي شائع.",
+  en:"The rise is applied to the old value and the fall to the new one: 100 → 120 → 96, which is 4% lower. Any question with two consecutive changes deserves a pause; \"the same\" is the intuitive trap."},
+ {stem:"Of 2,400 applicants, 15% passed the first stage and one third of those passed the second. How many passed the second stage?",
+  ch:["80","120","360","800"],a:1,
+  ar:"خطوتان: 2,400 × 0.15 = 360 اجتازوا الأولى، ثم 360 ÷ 3 = 120. الخيار 360 موضوع لمن يتوقف عند الخطوة الأولى.",
+  en:"Two steps: 2,400 × 0.15 = 360 pass the first stage, then 360 ÷ 3 = 120. The 360 option is there for anyone who stops after step one."},
+ {stem:"A contract is worth 850,000 SAR, of which 35% is labour. If labour costs rise by 10%, what is the new labour cost?",
+  ch:["297,500 SAR","327,250 SAR","318,750 SAR","935,000 SAR"],a:1,
+  ar:"العمالة = 850,000 × 0.35 = 297,500، ثم × 1.10 = 327,250. الخيار الأول هو قيمة العمالة قبل الزيادة، وهو الفخّ لمن ينسى الخطوة الثانية.",
+  en:"Labour = 850,000 × 0.35 = 297,500, then × 1.10 = 327,250. The first option is the labour cost before the rise — the trap for anyone who forgets the second step."},
+ {stem:"A plant produced 8,400 units, of which 1,260 failed inspection. What percentage failed?",
+  ch:["12%","15%","18%","21%"],a:1,
+  ar:"القانون: %A = A ÷ Total × 100 = 1,260 ÷ 8,400 × 100 = 15%.",
+  en:"%A = A ÷ Total × 100 = 1,260 ÷ 8,400 × 100 = 15%."},
+ {stem:"After a 12% discount, a contract is worth 154,000 SAR. What was it worth before the discount?",
+  ch:["166,320 SAR","172,480 SAR","175,000 SAR","190,960 SAR"],a:2,
+  ar:"القانون: old = new ÷ (1 − %) = 154,000 ÷ 0.88 = 175,000. إضافة 12% إلى 154,000 تعطي 172,480 وهي خطأ، لأن الخصم حُسب على القيمة الأصلية لا على المخفّضة.",
+  en:"old = new ÷ (1 − %) = 154,000 ÷ 0.88 = 175,000. Adding 12% to 154,000 gives 172,480, which is wrong: the discount was taken from the original, not from the discounted figure."},
+ {stem:"Revenue is split between three units in the ratio 2 : 3 : 5. Total revenue is 1,200,000 SAR. What does the largest unit receive?",
+  ch:["240,000 SAR","360,000 SAR","500,000 SAR","600,000 SAR"],a:3,
+  ar:"مجموع أطراف النسبة 10، ونصيب الأكبر 5 منها، أي النصف: 1,200,000 × 5 ÷ 10 = 600,000. الخطأ الشائع قسمة المبلغ على 5 مباشرة.",
+  en:"The ratio parts total 10 and the largest takes 5 of them, i.e. half: 1,200,000 × 5 ÷ 10 = 600,000. The common error is dividing the total by 5 directly."},
+ {stem:"1 EUR = 4.10 SAR. An invoice of 8,200 SAR is equal to how many euros?",
+  ch:["2,000 EUR","2,050 EUR","20,000 EUR","33,620 EUR"],a:0,
+  ar:"من العملة الضعيفة إلى القوية نقسم: 8,200 ÷ 4.10 = 2,000 يورو. الضرب يعطي 33,620 وهو الفخّ.",
+  en:"Weak to strong means dividing: 8,200 ÷ 4.10 = 2,000 EUR. Multiplying gives 33,620, the distractor."},
+ {stem:"1 USD = 3.75 SAR. A payment of 3,000 USD is equal to how many riyals?",
+  ch:["800 SAR","8,000 SAR","11,250 SAR","1,125 SAR"],a:2,
+  ar:"من العملة القوية إلى الضعيفة نضرب: 3,000 × 3.75 = 11,250 ريالًا. القسمة تعطي 800 وهو الفخّ.",
+  en:"Strong to weak means multiplying: 3,000 × 3.75 = 11,250 SAR. Dividing gives 800, the distractor."},
+ {stem:"A workforce of 1,800 includes 25% contractors. Of the contractors, 40% work on site. How many contractors work on site?",
+  ch:["180","200","450","720"],a:0,
+  ar:"خطوتان: 1,800 × 0.25 = 450 متعاقدًا، ثم 450 × 0.40 = 180. الخيار 450 موضوع لمن يتوقف عند الخطوة الأولى، و720 لمن يطبّق 40% على العدد الكلي.",
+  en:"Two steps: 1,800 × 0.25 = 450 contractors, then 450 × 0.40 = 180. The 450 option is for anyone who stops at step one, and 720 for anyone who applies 40% to the whole workforce."},
+ {stem:"Output over four quarters averaged 320 units. The first three quarters were 290, 340 and 310. What was the fourth?",
+  ch:["320","330","340","350"],a:2,
+  ar:"المجموع المطلوب = 320 × 4 = 1,280. مجموع الثلاثة الأولى 940. الرابع = 1,280 − 940 = 340. اقلب قانون المتوسط بدل تخمين الرقم.",
+  en:"The required total is 320 × 4 = 1,280. The first three sum to 940, so the fourth is 1,280 − 940 = 340. Reverse the averaging formula rather than guessing the figure."},
+ {stem:"Costs fell from 2,400,000 SAR to 2,040,000 SAR. What was the percentage decrease?",
+  ch:["12%","15%","18%","36%"],a:1,
+  ar:"الفرق 360,000 من أصل 2,400,000، أي 15%. القانون نفسه يخدم الزيادة والنقص، والفارق فقط في إشارة الناتج.",
+  en:"The difference is 360,000 on a base of 2,400,000, i.e. 15%. The same formula serves rises and falls; only the sign of the result differs."},
+ {stem:"A shipment of 750 units cost 33,750 SAR in total. What was the cost per unit?",
+  ch:["35 SAR","40 SAR","45 SAR","50 SAR"],a:2,
+  ar:"الإجمالي = عدد القطع × تكلفة القطعة، فالتكلفة = 33,750 ÷ 750 = 45 ريالًا.",
+  en:"Total = units × cost per unit, so cost per unit = 33,750 ÷ 750 = 45 SAR."},
+ {stem:"A department has 84 staff, which is 12% of the company's total. How many staff does the company have?",
+  ch:["588","700","1,008","1,050"],a:1,
+  ar:"القانون: Total = A ÷ %A = 84 ÷ 0.12 = 700. الضرب في 12 بدل القسمة على 0.12 يعطي 1,008 وهو الفخّ.",
+  en:"Total = A ÷ %A = 84 ÷ 0.12 = 700. Multiplying by 12 instead of dividing by 0.12 gives 1,008, the distractor."},
+ {stem:"Region A recorded sales of 240 and Region B recorded 180. What is the ratio of A to B in its simplest form?",
+  tbl:[["Region","Sales","Branches"],["A","240","6"],["B","180","5"],["C","300","8"]],
+  ch:["3 : 4","4 : 3","5 : 4","6 : 5"],a:1,
+  ar:"اقسم الطرفين على القاسم المشترك 60: 240 : 180 يصبح 4 : 3. انتبه لاتجاه النسبة، فعكسها 3 : 4 وهو الفخّ. وعمودا الفروع والمنطقة C لا يدخلان في السؤال.",
+  en:"Divide both sides by the common factor 60: 240 : 180 becomes 4 : 3. Watch the direction — reversed it gives 3 : 4, the distractor. The branches column and Region C play no part."},
+ {stem:"Output of 5,000 units grows by 10% in each of two consecutive years. What is the output after two years?",
+  ch:["6,000","6,050","6,100","5,500"],a:1,
+  ar:"سنة بعد سنة: 5,000 × 1.10 = 5,500، ثم 5,500 × 1.10 = 6,050. جمع 20% دفعة واحدة يعطي 6,000 وهو الفخّ، لأن الزيادة الثانية تُحسب على القيمة الجديدة.",
+  en:"Year by year: 5,000 × 1.10 = 5,500, then 5,500 × 1.10 = 6,050. Adding 20% in one go gives 6,000, the distractor, because the second rise is calculated on the new value."},
+ {stem:"A company's market share rose from 12% to 15%. By what percentage did its share increase?",
+  ch:["3%","12%","25%","27%"],a:2,
+  ar:"القيمة ارتفعت من 12 إلى 15، والفرق 3 من أصل 12، أي 25%. الخيار 3% هو الفرق بالنقاط المئوية لا بالنسبة، وهذا أشهر التباس في هذا القسم: النقطة المئوية شيء والنسبة المئوية شيء آخر.",
+  en:"The value rose from 12 to 15: a difference of 3 on a base of 12, i.e. 25%. The 3% option is the gap in percentage points, not the percentage increase — the classic confusion in this section between a percentage point and a percentage."},
+ {stem:"One site has 60 workers averaging 8 units each; another has 40 workers averaging 13 each. What is the average output per worker across both sites?",
+  ch:["10","10.5","11","12"],a:0,
+  ar:"لا تأخذ متوسط المتوسطين. احسب الإنتاج الكلي: (60 × 8) + (40 × 13) = 480 + 520 = 1,000، على 100 عامل = 10 وحدات. متوسط المتوسطين يعطي 10.5 وهو الفخّ.",
+  en:"Do not average the two averages. Take total output: (60 × 8) + (40 × 13) = 480 + 520 = 1,000, over 100 workers = 10 units. Averaging the averages gives 10.5, the distractor."},
+ {stem:"A table of branch revenue is headed \"figures in thousands\". One branch shows 1,450. What is its actual revenue?",
+  ch:["14,500 SAR","145,000 SAR","1,450,000 SAR","14,500,000 SAR"],a:2,
+  ar:"«بالآلاف» تعني ضرب الرقم في 1,000: 1,450 × 1,000 = 1,450,000. إغفال رأس الجدول هو أكثر أسباب الخطأ في هذا القسم، وليس الحساب.",
+  en:"\"In thousands\" means multiplying by 1,000: 1,450 × 1,000 = 1,450,000. Overlooking the table heading causes more errors in this section than the arithmetic does."},
+ {stem:"A crew lays 240 metres of pipe in 6 hours. At the same rate, how long will 400 metres take?",
+  ch:["8 hours","9 hours","10 hours","12 hours"],a:2,
+  ar:"المعدّل = 240 ÷ 6 = 40 مترًا في الساعة، ثم 400 ÷ 40 = 10 ساعات. احسب معدّل الوحدة أولًا دائمًا في أسئلة المعدّلات.",
+  en:"The rate is 240 ÷ 6 = 40 metres an hour, then 400 ÷ 40 = 10 hours. In rate questions, always work out the unit rate first."},
+ {stem:"An item priced at 2,000 SAR is sold with a 15% discount, and 15% VAT is then added. What is the final price?",
+  ch:["1,955 SAR","2,000 SAR","1,700 SAR","2,045 SAR"],a:0,
+  ar:"2,000 × 0.85 = 1,700، ثم 1,700 × 1.15 = 1,955. الخصم والضريبة بالنسبة نفسها لا يلغي أحدهما الآخر، لأن كلًّا منهما يُحسب على قاعدة مختلفة.",
+  en:"2,000 × 0.85 = 1,700, then 1,700 × 1.15 = 1,955. A discount and a tax at the same rate do not cancel out, because each is applied to a different base."},
+ {stem:"A budget of 600,000 SAR allocates 40% to salaries. A quarter of the remainder goes to training. How much goes to training?",
+  ch:["60,000 SAR","90,000 SAR","150,000 SAR","240,000 SAR"],a:1,
+  ar:"الرواتب 240,000، فالمتبقي 360,000، وربعه 90,000. الخيار 150,000 موضوع لمن يأخذ ربع الميزانية كاملة بدل ربع المتبقي.",
+  en:"Salaries take 240,000, leaving 360,000, a quarter of which is 90,000. The 150,000 option is for anyone taking a quarter of the whole budget instead of a quarter of the remainder."},
+ {stem:"Of 5,000 applicants, 8% were shortlisted and 25% of those were hired. How many were hired?",
+  ch:["100","125","400","1,000"],a:0,
+  ar:"5,000 × 0.08 = 400 مرشّحًا، ثم 400 × 0.25 = 100. الخيار 400 لمن يتوقف عند الخطوة الأولى.",
+  en:"5,000 × 0.08 = 400 shortlisted, then 400 × 0.25 = 100. The 400 option is for anyone who stops at step one."},
+ {stem:"Fixed costs are 120,000 SAR and each unit sold contributes 30 SAR. How many units must be sold to cover the fixed costs?",
+  ch:["3,000","3,600","4,000","4,800"],a:2,
+  ar:"عدد الوحدات = التكاليف الثابتة ÷ مساهمة الوحدة = 120,000 ÷ 30 = 4,000 وحدة.",
+  en:"Units = fixed costs ÷ contribution per unit = 120,000 ÷ 30 = 4,000 units."}
+];
+
+var RING=[[0,0],[0,1],[0,2],[1,2],[2,2],[2,1],[2,0],[1,0]];
+function frameSVG(pos,dots,size,fill){
+  var s=size||66,g=(s-16)/3,p=8,o='';
+  if(fill===undefined)fill=1;
+  o+='<svg viewBox="0 0 '+s+' '+s+'" width="'+s+'" height="'+s+'" xmlns="http://www.w3.org/2000/svg">';
+  for(var r=0;r<3;r++)for(var c=0;c<3;c++){
+    var on=(RING[pos][0]===r&&RING[pos][1]===c);
+    var x=p+c*g,y=p+r*g,w=g-2.5;
+    if(on&&!fill)
+      o+='<rect x="'+(x+1)+'" y="'+(y+1)+'" width="'+(w-2)+'" height="'+(w-2)+'" rx="1" fill="none" stroke="var(--pen)" stroke-width="2"/>';
+    else
+      o+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+w+'" rx="1" fill="'+(on?'var(--pen)':'var(--grid-empty)')+'"/>';
+  }
+  for(var d=0;d<dots;d++)o+='<circle cx="'+(p+3+d*7)+'" cy="'+(s-4)+'" r="2.4" fill="var(--ink)"/>';
+  return o+'</svg>';
+}
+function makeInductive(){
+  var STEPS=[1,2,3,5,6,7];
+  var step=STEPS[Math.floor(Math.random()*STEPS.length)];
+  var start=Math.floor(Math.random()*8);
+  var dDelta=[0,1,-1][Math.floor(Math.random()*3)];
+  var dStart=dDelta===1?1:(dDelta===-1?5:1+Math.floor(Math.random()*5));
+  var alt=Math.random()<0.5?0:1;                 // 0 = تظليل ثابت
+  var off=Math.floor(Math.random()*2);
+  function fillAt(i){return alt?(((i+off)%2===0)?1:0):1;}
+  function clamp(n){return Math.max(1,Math.min(5,n));}
+  var frames=[],i;
+  for(i=0;i<4;i++)frames.push({pos:(start+step*i)%8,dots:dStart+dDelta*i,fill:fillAt(i)});
+  var right={pos:(start+step*4)%8,dots:dStart+dDelta*4,fill:fillAt(4)};
+  var opts=[right,
+    {pos:(start+step*3)%8,dots:right.dots,fill:right.fill},
+    {pos:right.pos,dots:clamp(right.dots+(dDelta===0?1:-dDelta*2)),fill:right.fill},
+    {pos:right.pos,dots:right.dots,fill:1-right.fill},
+    {pos:(right.pos+3)%8,dots:clamp(right.dots+(dDelta===0?-1:dDelta)),fill:right.fill}];
+  function key(o){return o.pos+'-'+o.dots+'-'+o.fill;}
+  var seen={},clean=[opts[0]];seen[key(opts[0])]=1;
+  for(i=1;i<opts.length&&clean.length<4;i++){
+    if(!seen[key(opts[i])]){seen[key(opts[i])]=1;clean.push(opts[i]);}}
+  while(clean.length<4){
+    var cand={pos:Math.floor(Math.random()*8),dots:1+Math.floor(Math.random()*5),fill:Math.random()<0.5?0:1};
+    if(!seen[key(cand)]){seen[key(cand)]=1;clean.push(cand);}}
+  var order=clean.map(function(v,ix){return{v:v,r:Math.random(),correct:ix===0};})
+                 .sort(function(a,b){return a.r-b.r;});
+  var stepAr={1:'خانة واحدة مع عقارب الساعة',2:'خانتين مع عقارب الساعة',3:'ثلاث خانات مع عقارب الساعة',
+              5:'ثلاث خانات عكس عقارب الساعة',6:'خانتين عكس عقارب الساعة',7:'خانة واحدة عكس عقارب الساعة'}[step];
+  var stepEn={1:'one cell clockwise',2:'two cells clockwise',3:'three cells clockwise',
+              5:'three cells anticlockwise',6:'two cells anticlockwise',7:'one cell anticlockwise'}[step];
+  var dotAr=dDelta===0?'عدد النقاط ثابت':(dDelta>0?'عدد النقاط يزيد واحدة في كل خطوة':'عدد النقاط ينقص واحدة في كل خطوة');
+  var dotEn=dDelta===0?'the dot count stays constant':(dDelta>0?'the dot count rises by one each step':'the dot count falls by one each step');
+  var fillAr=alt?'والتظليل يتبادل بين ممتلئ وفارغ في كل خطوة':'والتظليل ممتلئ في كل الأشكال';
+  var fillEn=alt?'and the shading alternates between filled and outlined each step':'and the shading stays filled throughout';
+  var sig=[step,start,dStart,dDelta,alt,off].join(':');
+  return {frames:frames,opts:order,sig:sig,
+   ar:'ثلاثة متغيّرات مستقلة: المربع يتقدّم '+stepAr+'، و'+dotAr+'، '+fillAr+'. افحص كل متغيّر وحده عبر الأشكال الأربعة — الموقع عادة يكفي لاستبعاد خيارين، والباقيان يحسمان الجواب.',
+   en:'Three independent variables: the marked cell advances '+stepEn+', '+dotEn+', '+fillEn+'. Track each one on its own across the four figures — position usually eliminates two options, and the other two settle it.'};
+}
+
+/* ══════════ الواجهة ══════════ */
+(function(){
+  var lang='ar',sec='verbal',mode='review',state=null,timer=null;
+  var runner=document.getElementById('runner'),setup=document.getElementById('setup');
+  function t(){return T[lang];}
+  function ex(it){return it[lang]||it.ar;}
+
+  function paintChrome(){
+    var L=t();
+    document.documentElement.lang=lang;
+    document.documentElement.dir=L.dir;
+    document.getElementById('sig').innerHTML=L.sig;
+    document.getElementById('langBtn').textContent=L.other;
+    document.getElementById('themeBtn').textContent=L.theme;
+    document.getElementById('tab-guide').textContent=L.tabGuide;
+    document.getElementById('tab-train').textContent=L.tabTrain;
+    document.getElementById('guideBody').innerHTML=GUIDE[lang];
+    document.getElementById('footBody').innerHTML=L.foot;
+    setup.innerHTML=
+      '<h2>'+L.setupH+'</h2><p class="sec-note" style="margin:6px 0 0">'+L.setupNote+'</p>'+
+      '<div class="field"><div class="lbl">'+L.lblSec+'</div><div class="chips" id="secChips">'+
+      chip('data-sec','verbal',sec,L.secV,L.secVs)+chip('data-sec','numerical',sec,L.secN,L.secNs)+
+      chip('data-sec','inductive',sec,L.secI,L.secIs)+'</div></div>'+
+      '<div class="field"><div class="lbl">'+L.lblMode+'</div><div class="chips" id="modeChips">'+
+      chip('data-mode','review',mode,L.mR,L.mRs)+chip('data-mode','exam',mode,L.mE,L.mEs)+'</div></div>'+
+      '<button class="go" id="startBtn" type="button">'+L.start+'</button>';
+    wireSetup();
+  }
+  function chip(attr,val,cur,label,sub){
+    return '<button class="chip" '+attr+'="'+val+'" aria-pressed="'+(cur===val?'true':'false')+'">'+
+           label+'<small>'+sub+'</small></button>';
+  }
+  function wireSetup(){
+    ['secChips','modeChips'].forEach(function(id){
+      var attr=id==='secChips'?'data-sec':'data-mode';
+      document.getElementById(id).addEventListener('click',function(ev){
+        var b=ev.target.closest('.chip');if(!b)return;
+        Array.prototype.forEach.call(this.querySelectorAll('.chip'),function(c){
+          c.setAttribute('aria-pressed',c===b?'true':'false');});
+        if(attr==='data-sec')sec=b.getAttribute(attr);else mode=b.getAttribute(attr);
+      });
+    });
+    document.getElementById('startBtn').addEventListener('click',begin);
+  }
+
+  document.getElementById('langBtn').addEventListener('click',function(){
+    lang=lang==='ar'?'en':'ar';
+    try{localStorage.setItem('shl-lang',lang);}catch(e){}
+    if(timer){clearInterval(timer);timer=null;}
+    state=null;runner.hidden=true;runner.innerHTML='';setup.hidden=false;
+    paintChrome();
+  });
+  (function(){
+    var b=document.getElementById('themeBtn'),cur=null;
+    try{var s=localStorage.getItem('shl-theme');if(s){cur=s;document.documentElement.setAttribute('data-theme',s);}}catch(e){}
+    b.addEventListener('click',function(){
+      if(!cur)cur=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'light':'dark';
+      else cur=cur==='dark'?'light':'dark';
+      document.documentElement.setAttribute('data-theme',cur);
+      try{localStorage.setItem('shl-theme',cur);}catch(e){}
+    });
+  })();
+  var tabs=[['tab-guide','p-guide'],['tab-train','p-train']];
+  tabs.forEach(function(tb){
+    document.getElementById(tb[0]).addEventListener('click',function(){
+      tabs.forEach(function(o){
+        var on=o[0]===tb[0];
+        document.getElementById(o[0]).setAttribute('aria-selected',on?'true':'false');
+        document.getElementById(o[1]).classList.toggle('on',on);
+      });
+      window.scrollTo(0,0);
+    });
+  });
+
+  function shuffle(a){var r=a.slice(),i,j,t;
+    for(i=r.length-1;i>0;i--){j=Math.floor(Math.random()*(i+1));t=r[i];r[i]=r[j];r[j]=t;}return r;}
+
+  function build(){
+    var items=[],full=(mode==='review');
+    if(sec==='verbal'){
+      var pool=full?VERBAL:shuffle(VERBAL).slice(0,10);
+      pool.forEach(function(bk,bi){bk.s.forEach(function(st){
+        items.push({type:'v',passage:bk.p,pIdx:bi,stem:st.t,
+          ch:["True","False","Can't Say"],a:{T:0,F:1,CS:2}[st.a],ar:st.ar,en:st.en});});});
+    } else if(sec==='numerical'){
+      var qs=full?NUM:shuffle(NUM).slice(0,17);
+      items=qs.map(function(q){
+        var order=shuffle(q.ch.map(function(c,i){return i;}));
+        return {type:'n',stem:q.stem,tbl:q.tbl,
+          ch:order.map(function(i){return q.ch[i];}),
+          a:order.indexOf(q.a),ar:q.ar,en:q.en};
+      });
+    } else {
+      var want=full?16:24,used={},guard=0;
+      while(items.length<want&&guard<800){
+        guard++;
+        var g=makeInductive();
+        if(used[g.sig])continue;
+        used[g.sig]=1;
+        items.push({type:'i',frames:g.frames,opts:g.opts,ar:g.ar,en:g.en});
+      }
+    }
+    var mins={verbal:17,numerical:18,inductive:24}[sec];
+    return {items:items,idx:0,ans:new Array(items.length).fill(null),left:mins*60,done:false};
+  }
+
+  function qBody(it,showAns,picked,hidePassage){
+    var h='';
+    if(it.type==='v'){
+      if(!hidePassage)h+='<div class="passage">'+it.passage+'</div>';
+      h+='<p class="stem ltr">'+it.stem+'</p>';
+    } else if(it.type==='n'){
+      if(it.tbl){h+='<div class="dtbl"><table><tbody>';
+        it.tbl.forEach(function(r,ri){h+='<tr>'+r.map(function(c){
+          return ri===0?'<th>'+c+'</th>':'<td>'+c+'</td>';}).join('')+'</tr>';});
+        h+='</tbody></table></div>';}
+      h+='<p class="stem ltr">'+it.stem+'</p>';
+    } else {
+      h+='<div class="seqrow">';
+      it.frames.forEach(function(f){h+='<span class="frame">'+frameSVG(f.pos,f.dots)+'</span>';});
+      h+='<span class="frame miss">?</span></div><p class="stem">'+t().seqQ+'</p>';
+    }
+    if(it.type==='i'){
+      h+='<div class="choices grid">';
+      it.opts.forEach(function(o,i){
+        var cls='ch svgch';
+        if(showAns){if(o.correct)cls+=' correct';else if(picked===i)cls+=' incorrect';}
+        h+='<button class="'+cls+'" data-i="'+i+'" type="button" aria-pressed="'+(picked===i?'true':'false')+'">'+frameSVG(o.v.pos,o.v.dots,56)+'</button>';
+      });
+      h+='</div>';
+    } else {
+      h+='<div class="choices">';
+      it.ch.forEach(function(c,i){
+        var cls='ch';
+        if(showAns){if(i===it.a)cls+=' correct';else if(picked===i)cls+=' incorrect';}
+        h+='<button class="'+cls+'" data-i="'+i+'" type="button" aria-pressed="'+(picked===i?'true':'false')+'" dir="ltr" style="text-align:left">'+c+'</button>';
+      });
+      h+='</div>';
+    }
+    return h;
+  }
+  function fmt(s){var m=Math.floor(s/60),x=s%60;return m+':'+(x<10?'0':'')+x;}
+
+  function render(){
+    var s=state,L=t(),h='';
+    if(mode==='review'){
+      h+='<div class="runbar"><span>'+L.reviewBar(s.items.length)+'</span>'+
+         '<button class="ghost" id="backBtn" type="button">'+L.changeSec+'</button></div>';
+      s.items.forEach(function(it,i){
+        h+='<div class="q" data-q="'+i+'"><div class="num">'+L.qOf(i+1,s.items.length)+'</div>';
+        h+=qBody(it,false,s.ans[i],it.pIdx!==undefined&&i>0&&s.items[i-1].pIdx===it.pIdx);
+        h+='<details class="rev"><summary>'+L.showAns+'</summary><div class="expl"><b>'+L.explain+'</b>'+ex(it)+'</div></details></div>';
+      });
+    } else if(!s.done){
+      var it=s.items[s.idx];
+      h+='<div class="runbar"><span>'+L.qOf(s.idx+1,s.items.length)+'</span>'+
+         '<span class="clock'+(s.left<60?' low':'')+'" id="clk">'+fmt(s.left)+'</span></div>'+
+         '<div class="prog"><i style="width:'+(s.idx/s.items.length*100)+'%"></i></div>'+
+         '<div class="q" data-q="'+s.idx+'">'+qBody(it,false,s.ans[s.idx])+'</div>'+
+         '<div class="navrow"><button id="prevBtn" type="button"'+(s.idx===0?' disabled':'')+'>'+L.prev+'</button>'+
+         '<button id="nextBtn" class="primary" type="button">'+(s.idx===s.items.length-1?L.finish:L.next)+'</button></div>';
+    } else {
+      var right=0;
+      s.items.forEach(function(it,i){if(isRight(it,s.ans[i]))right++;});
+      var pct=Math.round(right/s.items.length*100);
+      h+='<div class="result"><div class="big">'+right+' / '+s.items.length+'</div>'+
+         '<div class="sub">'+L.pctRight(pct)+'</div>'+
+         '<div class="bar"><i style="flex:'+right+';background:var(--ok)"></i><i style="flex:'+(s.items.length-right)+';background:var(--rule-soft)"></i></div>'+
+         '<div class="sub">'+L.resNote+'</div></div>';
+      if(sec==='verbal'){
+        var lab=["True","False","Can't Say"],hit=[0,0,0],tot=[0,0,0];
+        s.items.forEach(function(it,i){tot[it.a]++;if(isRight(it,s.ans[i]))hit[it.a]++;});
+        h+='<div class="tbl-scroll"><table><thead><tr><th>'+L.byType+'</th><th></th></tr></thead><tbody>';
+        lab.forEach(function(n,k){
+          if(!tot[k])return;
+          var pc=Math.round(hit[k]/tot[k]*100);
+          h+='<tr><td><span class="mono">'+n+'</span></td><td>'+hit[k]+' / '+tot[k]+
+             ' <span style="color:var(--muted)">('+pc+'%)</span></td></tr>';
+        });
+        h+='</tbody></table></div>';
+      }
+      h+='<div class="navrow"><button id="backBtn" type="button">'+L.again+'</button></div>';
+      s.items.forEach(function(it,i){
+        var ok=isRight(it,s.ans[i]);
+        h+='<div class="q"><div class="num">'+L.qN(i+1)+'</div>'+qBody(it,true,s.ans[i])+
+           '<div class="expl '+(ok?'good':'bad')+'"><b>'+(ok?L.good:(s.ans[i]===null?L.none:L.bad))+'</b>'+ex(it)+'</div></div>';
+      });
+    }
+    runner.innerHTML=h;wire();
+  }
+  function isRight(it,a){
+    if(a===null)return false;
+    return it.type==='i'?!!it.opts[a].correct:(a===it.a);
+  }
+
+  function wire(){
+    var s=state;
+    Array.prototype.forEach.call(runner.querySelectorAll('.q'),function(qd){
+      var qi=parseInt(qd.getAttribute('data-q'),10);if(isNaN(qi))return;
+      Array.prototype.forEach.call(qd.querySelectorAll('.ch'),function(b){
+        b.addEventListener('click',function(){
+          if(mode==='exam'&&s.done)return;
+          s.ans[qi]=parseInt(b.getAttribute('data-i'),10);
+          Array.prototype.forEach.call(qd.querySelectorAll('.ch'),function(o){
+            o.setAttribute('aria-pressed',o===b?'true':'false');});
+          if(mode==='review'){
+            var det=qd.querySelector('details.rev');if(det)det.open=true;
+            var it=s.items[qi];
+            Array.prototype.forEach.call(qd.querySelectorAll('.ch'),function(o,i){
+              o.classList.remove('correct','incorrect');
+              var r=it.type==='i'?it.opts[i].correct:(i===it.a);
+              if(r)o.classList.add('correct');else if(i===s.ans[qi])o.classList.add('incorrect');
+            });
+          }
+        });
+      });
+    });
+    var pb=runner.querySelector('#prevBtn'),nb=runner.querySelector('#nextBtn'),bb=runner.querySelector('#backBtn');
+    if(pb)pb.addEventListener('click',function(){if(s.idx>0){s.idx--;render();window.scrollTo(0,0);}});
+    if(nb)nb.addEventListener('click',function(){
+      if(s.idx<s.items.length-1){s.idx++;render();window.scrollTo(0,0);}else finish();});
+    if(bb)bb.addEventListener('click',function(){
+      if(timer){clearInterval(timer);timer=null;}
+      runner.hidden=true;setup.hidden=false;window.scrollTo(0,0);});
+  }
+  function finish(){if(timer){clearInterval(timer);timer=null;}state.done=true;render();window.scrollTo(0,0);}
+
+  function begin(){
+    state=build();setup.hidden=true;runner.hidden=false;
+    if(timer){clearInterval(timer);timer=null;}
+    render();window.scrollTo(0,0);
+    if(mode==='exam'){
+      timer=setInterval(function(){
+        state.left--;
+        var c=runner.querySelector('#clk');
+        if(c){c.textContent=fmt(state.left);c.classList.toggle('low',state.left<60);}
+        if(state.left<=0)finish();
+      },1000);
+    }
+  }
+
+  try{var sl=localStorage.getItem('shl-lang');if(sl==='en'||sl==='ar')lang=sl;}catch(e){}
+  paintChrome();
+})();
+</script>
+</body>
+</html>
