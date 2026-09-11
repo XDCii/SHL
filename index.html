@@ -36,7 +36,8 @@ html[lang="en"]{
   --ok:#63BE8B; --ok-soft:#1B2A22; --no:#E0796C; --no-soft:#2C1E1C;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);
+html{-webkit-text-size-adjust:100%}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);
   font-family:var(--body-font);font-size:17px;line-height:var(--lh)}
 h1,h2,h3,.kufi{font-family:var(--head-font);line-height:1.55}
 p{margin:0 0 1em}
@@ -44,12 +45,12 @@ p{margin:0 0 1em}
 .wrap{max-width:780px;margin:0 auto;padding:0 20px}
 
 header.top{border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:20}
-.top-in{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 20px;flex-wrap:wrap}
 .sig{font-family:var(--head-font);font-weight:700;font-size:.88rem}
 .sig span{color:var(--muted);font-weight:500}
 .topbtns{display:flex;gap:8px}
 .ghost{background:none;border:1px solid var(--rule);color:var(--muted);border-radius:999px;
-  padding:5px 13px;font-family:var(--head-font);font-size:.72rem;cursor:pointer;white-space:nowrap}
+  padding:8px 14px;min-height:36px;font-family:var(--head-font);font-size:.72rem;cursor:pointer;white-space:nowrap}
 .ghost:hover{color:var(--ink);border-color:var(--ink)}
 .ghost.lang{border-color:var(--pen);color:var(--pen);font-weight:600}
 
@@ -110,8 +111,23 @@ td:first-child{font-family:var(--head-font);font-size:.84rem;color:var(--muted)}
 .go{margin-top:24px;width:100%;background:var(--ink);color:var(--paper);border:none;border-radius:3px;
   padding:14px;font-family:var(--head-font);font-size:.95rem;font-weight:700;cursor:pointer}
 .go:hover{opacity:.88}
+.resume{margin:18px 0 0;border:1px solid var(--pen);background:var(--pen-soft);border-radius:3px;padding:15px 16px}
+.resume h3{font-size:.95rem;margin:0 0 4px;color:var(--pen)}
+.resume p{margin:0 0 12px;font-size:.9rem;color:var(--muted)}
+.resume .row{display:flex;gap:8px;flex-wrap:wrap}
+.resume button{flex:1 1 auto;border:1px solid var(--pen);background:none;color:var(--pen);
+  border-radius:3px;padding:10px 12px;font-family:var(--head-font);font-size:.82rem;cursor:pointer;min-height:40px}
+.resume button.main{background:var(--pen);color:var(--card);font-weight:700}
+.hist{margin:18px 0 0;border-top:1px solid var(--rule-soft);padding-top:14px}
+.hist h3{font-size:.8rem;color:var(--muted);margin:0 0 8px;font-weight:500}
+.hist ul{list-style:none;margin:0;padding:0}
+.hist li{display:flex;justify-content:space-between;gap:10px;font-family:var(--head-font);
+  font-size:.78rem;padding:6px 0;border-bottom:1px solid var(--rule-soft)}
+.hist li:last-child{border-bottom:none}
+.hist b{font-weight:700}
+.kbdhint{margin:14px 0 0;font-size:.78rem;color:var(--muted);font-family:var(--head-font)}
 
-.runbar{position:sticky;top:53px;background:var(--paper);border-bottom:1px solid var(--rule);
+.runbar{position:sticky;top:var(--hdr,98px);background:var(--paper);border-bottom:1px solid var(--rule);
   padding:11px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:10;
   font-family:var(--head-font);font-size:.8rem}
 .runbar .clock{font-weight:700;font-size:1rem;font-variant-numeric:tabular-nums}
@@ -119,13 +135,13 @@ td:first-child{font-family:var(--head-font);font-size:.84rem;color:var(--muted)}
 .prog{height:3px;background:var(--rule-soft);border-radius:2px;overflow:hidden;margin-top:8px}
 .prog i{display:block;height:100%;background:var(--pen);width:0}
 
-.q{margin:26px 0 0;border:1px solid var(--rule);border-radius:3px;background:var(--card);padding:20px 18px}
+.q{margin:22px 0 0;border:1px solid var(--rule);border-radius:3px;background:var(--card);padding:18px 16px}
 .q .num{font-family:var(--head-font);font-size:.72rem;color:var(--muted);margin-bottom:10px}
 .q .passage{background:var(--pen-soft);border-inline-start:3px solid var(--pen);border-radius:3px;
-  padding:14px 16px;margin-bottom:16px;direction:ltr;text-align:left;font-size:.95rem;line-height:1.7;
+  padding:13px 15px;margin-bottom:14px;direction:ltr;text-align:left;font-size:.92rem;line-height:1.55;
   font-family:"Source Serif 4",Georgia,serif}
 .q .stem{margin:0 0 14px;font-size:1rem}
-.q .stem.ltr{direction:ltr;text-align:left;font-family:"Source Serif 4",Georgia,serif}
+.q .stem.ltr{direction:ltr;text-align:left;line-height:1.55;font-family:"Source Serif 4",Georgia,serif}
 .dtbl{overflow-x:auto;margin:0 0 16px;border:1px solid var(--rule);border-radius:3px}
 .dtbl table{min-width:320px}
 .dtbl td,.dtbl th{font-family:var(--head-font);font-size:.85rem;padding:9px 13px}
@@ -137,12 +153,14 @@ td:first-child{font-family:var(--head-font);font-size:.84rem;color:var(--muted)}
 .ch.correct{border-color:var(--ok);background:var(--ok-soft)}
 .ch.incorrect{border-color:var(--no);background:var(--no-soft)}
 .ch.svgch{display:flex;justify-content:center;padding:8px}
+.ch.svgch svg{width:56px;height:56px}
 .choices.grid{flex-direction:row;flex-wrap:wrap}
 .choices.grid .ch{flex:1 1 calc(50% - 4px);min-width:120px}
-.seqrow{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
-.frame{border:1px solid var(--rule);border-radius:2px;line-height:0}
+.seqrow{display:flex;gap:5px;flex-wrap:nowrap;align-items:stretch;margin:0 0 16px;width:100%}
+.frame{border:1px solid var(--rule);border-radius:2px;line-height:0;flex:1 1 0;min-width:0;max-width:60px}
+.frame svg{width:100%;height:auto;display:block}
 .frame.miss{border-style:dashed;display:flex;align-items:center;justify-content:center;
-  width:58px;height:58px;color:var(--pen);font-family:var(--head-font);font-size:1.3rem}
+  aspect-ratio:1/1;color:var(--pen);font-family:var(--head-font);font-size:1.2rem;line-height:1}
 .expl{margin:14px 0 0;padding:13px 15px;border:1px solid var(--rule);border-radius:3px;font-size:.95rem}
 .expl b{font-family:var(--head-font);font-size:.85rem;display:block;margin-bottom:4px}
 .expl.good b{color:var(--ok)} .expl.bad b{color:var(--no)}
@@ -197,8 +215,9 @@ ar:{
  setupH:'اختر القسم والوضع',
  setupNote:'جميع الأسئلة هنا أصلية، مكتوبة على نمط الاختبار وليست منقولة منه.',
  lblSec:'القسم',lblMode:'الوضع',start:'ابدأ',
- secV:'الفيربال',secVs:'30 عبارة من بنك 90',
- secN:'النومريكال',secNs:'17 سؤالًا من بنك 30',
+ secName:{verbal:'الفيربال',numerical:'النومريكال',inductive:'الاندكتف'},
+ secV:'الفيربال',secVs:'30 عبارة من بنك 120',
+ secN:'النومريكال',secNs:'17 سؤالًا من بنك 40',
  secI:'الاندكتف',secIs:'24 سؤالًا · أشكال متعددة',
  mR:'مراجعة محلولة',mRs:'البنك كامل · بلا وقت · الشرح ظاهر',
  mE:'محاكاة مؤقتة',mEs:'بتوقيت الاختبار الحقيقي · بلا حلول',
@@ -211,6 +230,11 @@ ar:{
  pctRight:function(p){return p+'% إجابات صحيحة';},
  resNote:'هذه نسبة صحّة داخل هذا التدريب فقط، وليست مئينًا. الاختبار الفعلي يقارنك بمجموعة مرجعية لا بعدد أسئلتك.',
  byType:'دقّتك حسب نوع الإجابة',
+ resumeT:'لديك جلسة لم تكتمل',
+ resumeB:function(a,b,c){return c+' · توقفت عند سؤال '+a+' من '+b;},
+ resumeGo:'أكمل من حيث توقفت',resumeNo:'ابدأ جلسة جديدة',
+ histT:'نتائجك السابقة',histNone:'',timeUp:'انتهى الوقت قبل أن تُنهي الأسئلة.',
+ kbd:'على الكمبيوتر: اضغط 1 إلى 4 لاختيار إجابة، و Enter للانتقال.',
  good:'إجابة صحيحة',bad:'إجابة خاطئة',none:'لم تُجب',
  seqQ:'أي الخيارات يكمل التسلسل؟',
  foot:'<p>هذه المنصة مرجع تعريفي وتدريبي أُعدّ للمتقدّمين، وليست صادرة عن SHL ولا عن أي جهة توظيف. جميع الأسئلة الواردة فيها أصلية وُضعت على نمط الاختبار، ولا تحتوي على أسئلة الاختبار الفعلية.</p><p>تفاصيل المدة وعدد الأسئلة قد تختلف بحسب النسخة والوظيفة المتقدَّم عليها. آخر تحديث: سبتمبر 2026.</p>'
@@ -221,8 +245,9 @@ en:{
  setupH:'Choose a section and a mode',
  setupNote:'Every question here is original, written in the style of the test rather than taken from it.',
  lblSec:'Section',lblMode:'Mode',start:'Start',
- secV:'Verbal',secVs:'30 statements from a bank of 90',
- secN:'Numerical',secNs:'17 questions from a bank of 30',
+ secName:{verbal:'Verbal',numerical:'Numerical',inductive:'Inductive'},
+ secV:'Verbal',secVs:'30 statements from a bank of 120',
+ secN:'Numerical',secNs:'17 questions from a bank of 40',
  secI:'Inductive',secIs:'24 questions · varied figures',
  mR:'Worked review',mRs:'Full bank · untimed · explanations shown',
  mE:'Timed simulation',mEs:'Real test timing · answers hidden',
@@ -235,6 +260,11 @@ en:{
  pctRight:function(p){return p+'% correct';},
  resNote:'This is your accuracy within this practice set only, not a percentile. The real test ranks you against a norm group, not against your own question count.',
  byType:'Your accuracy by answer type',
+ resumeT:'You have an unfinished session',
+ resumeB:function(a,b,c){return c+' · you stopped at question '+a+' of '+b;},
+ resumeGo:'Resume where you left off',resumeNo:'Start a new session',
+ histT:'Your recent results',histNone:'',timeUp:'Time ran out before you finished the questions.',
+ kbd:'On a computer: press 1 to 4 to choose an answer, and Enter to move on.',
  good:'Correct',bad:'Incorrect',none:'Not answered',
  seqQ:'Which option completes the sequence?',
  foot:'<p>This is an informational and practice resource prepared for candidates. It is not produced by SHL or by any employer. All questions on it are original, written in the style of the test; none are actual test items.</p><p>Timings and question counts vary by version and by the role applied for. Last updated: September 2026.</p>'
@@ -629,6 +659,66 @@ var VERBAL=[
    {t:"Properties behind the wall no longer flood.",a:"T",ar:"النص يقول إن فيضان العقارات خلف الجدار توقّف. العبارة إعادة صياغة لهذا التوقّف. True — والقيد «خلف الجدار» موجود في العبارة كما في النص.",en:"The passage says flooding of the properties behind the wall stopped. The statement restates that. True — and the qualifier \"behind the wall\" appears in both."},
    {t:"Engineers agree that the wall caused the increased erosion.",a:"F",ar:"النص يقول إن المهندسين مختلفون في المسألة. الاتفاق يناقض الاختلاف صراحة، فالجواب False. لكن انتبه: نسبة التعرية للجدار نفسها Can't Say لأن النص لم يحسمها.",en:"The passage says engineers disagree on the point. Agreement contradicts disagreement outright, so False. But note the distinction: attributing the erosion to the wall is itself Can't Say, since the passage does not settle it."},
    {t:"The wall caused the increased erosion beyond it.",a:"CS",ar:"المسألة محلّ خلاف بين المختصين، والنص ينقل الخلاف دون ترجيح. Can't Say.",en:"The point is disputed among specialists, and the passage reports the dispute without settling it. Can't Say."}
+  ]},
+ {p:"A study followed adults who moved their bedtime an hour earlier for eight weeks. Reported daytime alertness improved. Total sleep duration was unchanged, since participants also woke earlier. The researchers note that participants knew what the study was investigating.",
+  s:[
+   {t:"Total sleep duration increased during the study.",a:"F",ar:"النص يقول إن مدة النوم الكلية لم تتغيّر، لأن المشاركين استيقظوا مبكرًا أيضًا. تقديم النوم ساعة لا يعني إطالته. False.",en:"The passage says total duration was unchanged, since participants also woke earlier. Going to bed an hour earlier did not lengthen it. False."},
+   {t:"Participants knew what the study was investigating.",a:"T",ar:"مذكور في آخر النص كملاحظة من الباحثين أنفسهم. True.",en:"Stated at the end of the passage as a note from the researchers themselves. True."},
+   {t:"The earlier bedtime caused the improvement in alertness.",a:"CS",ar:"التحسّن مذكور، لكن معرفة المشاركين بهدف الدراسة تفتح تفسيرًا آخر، والنص لا يرجّح أيًّا منهما. Can't Say.",en:"The improvement is stated, but participants' awareness of the study's purpose opens another explanation, and the passage favours neither. Can't Say."}
+  ]},
+ {p:"A vaccine requires storage between two and eight degrees. A clinic recorded three departures from that range last year, each lasting under an hour. The manufacturer's guidance permits brief departures without discarding stock. The clinic discarded the affected doses regardless.",
+  s:[
+   {t:"The clinic kept the doses affected by the temperature departures.",a:"F",ar:"النص يقول إنها أتلفت الجرعات المتأثرة رغم سماح الشركة المصنّعة. False.",en:"The passage says the clinic discarded the affected doses despite the manufacturer's allowance. False."},
+   {t:"The manufacturer's guidance allows brief departures without discarding stock.",a:"T",ar:"منصوص عليه حرفيًا في النص. True. ولاحظ أنه لا يتعارض مع تصرّف العيادة المخالف له.",en:"Stated in those terms in the passage. True. Note that it does not conflict with the clinic acting more strictly than it."},
+   {t:"Other clinics follow the same practice as this one.",a:"CS",ar:"النص يتحدث عن عيادة واحدة ولا يذكر غيرها. Can't Say.",en:"The passage concerns a single clinic and mentions no others. Can't Say."}
+  ]},
+ {p:"A regional health authority introduced a review step before antibiotics could be prescribed for minor infections. Prescriptions fell by 18% in the first year. Patient complaints about waiting times rose. The authority has not reported whether infection rates changed.",
+  s:[
+   {t:"Antibiotic prescriptions declined in the first year.",a:"T",ar:"النص يعطي رقمًا محدّدًا: انخفاض 18%. True.",en:"The passage gives a specific figure: a fall of 18%. True."},
+   {t:"The authority reported a change in infection rates.",a:"F",ar:"النص يقول صراحة إنها لم تُبلّغ عن ذلك. False.",en:"The passage states explicitly that it has not reported this. False."},
+   {t:"The review step harmed patient outcomes.",a:"CS",ar:"ارتفاع الشكاوى عن الانتظار لا يقيس النتائج الصحية، ونتائج العدوى غير معلومة أصلًا. Can't Say.",en:"A rise in complaints about waiting does not measure clinical outcomes, and infection rates are unreported. Can't Say."}
+  ]},
+ {p:"An index fund tracks a basket of shares rather than selecting them individually. Its management fee is lower than that of actively managed funds. Over the last decade, most actively managed funds in the same category did not outperform their index. Past performance does not guarantee future results.",
+  s:[
+   {t:"Index funds charge a lower management fee than actively managed funds.",a:"T",ar:"منصوص عليه في النص كمقارنة صريحة. True.",en:"Stated in the passage as an explicit comparison. True."},
+   {t:"Every actively managed fund failed to beat its index over the decade.",a:"F",ar:"النص يقول «most» أي معظمها لا كلها. تحويل «معظم» إلى «كل» مناقضة للنص. False.",en:"The passage says most, not all. Turning \"most\" into \"every\" contradicts it. False."},
+   {t:"Index funds will outperform actively managed funds over the next decade.",a:"CS",ar:"النص يختم بأن الأداء السابق لا يضمن اللاحق، فهو يمنع هذا الاستنتاج صراحة دون أن ينفي وقوعه. Can't Say.",en:"The passage closes by saying past performance does not guarantee future results, which blocks the inference without denying the outcome. Can't Say."}
+  ]},
+ {p:"When the market price of a bond falls, its yield rises, because the fixed coupon represents a larger share of the lower price. A fund reported that the market value of its bond holdings declined last quarter. The fund did not sell any of the holdings. Coupon payments continued as scheduled.",
+  s:[
+   {t:"The yield on the fund's bond holdings rose as their price fell.",a:"T",ar:"النص يقرّر القاعدة العامة في جملته الأولى ثم يخبر أن السعر انخفض، فتطبيق القاعدة على الحالة لزوم مباشر. True.",en:"The passage states the general rule in its first sentence and then reports the price fall, so applying the rule to this case follows directly. True."},
+   {t:"The fund sold part of its bond holdings during the quarter.",a:"F",ar:"النص ينفي البيع صراحة. False.",en:"The passage explicitly denies any sale. False."},
+   {t:"The fund made a loss over the quarter.",a:"CS",ar:"انخفاض القيمة السوقية بلا بيع لا يعني خسارة محقّقة، والنص لا يذكر النتيجة الكلية للصندوق. Can't Say.",en:"A fall in market value with no sale is not a realised loss, and the passage gives no overall result for the fund. Can't Say."}
+  ]},
+ {p:"A region raised its minimum wage by 9%. Employment in the hospitality sector was broadly unchanged in the following year. Average hours worked per employee fell slightly. Business groups had predicted job losses; unions had predicted none.",
+  s:[
+   {t:"Employment in hospitality fell sharply after the rise.",a:"F",ar:"النص يقول إن التوظيف بقي دون تغيّر يُذكر. False.",en:"The passage says employment was broadly unchanged. False."},
+   {t:"Average hours worked per employee declined.",a:"T",ar:"مذكور نصًّا مع قيد «قليلًا»، والعبارة نقلت الاتجاه نفسه. True.",en:"Stated in the passage with the qualifier \"slightly\", and the statement reports the same direction. True."},
+   {t:"The wage rise was responsible for the fall in average hours.",a:"CS",ar:"النص يذكر الأمرين متتاليين دون أن ينسب أحدهما للآخر. Can't Say.",en:"The passage reports the two facts in sequence without attributing one to the other. Can't Say."}
+  ]},
+ {p:"A fishing authority set a lower catch quota for one species. Landings of that species fell accordingly. Landings of a second, unregulated species rose over the same period. The authority monitors both species but regulates only the first.",
+  s:[
+   {t:"The authority regulates both species.",a:"F",ar:"النص يفرّق بين المراقبة والتنظيم: يراقب النوعين وينظّم الأول فقط. False.",en:"The passage distinguishes monitoring from regulating: it monitors both and regulates only the first. False."},
+   {t:"Landings of the regulated species declined.",a:"T",ar:"مذكور نصًّا كنتيجة لخفض الحصة. True.",en:"Stated directly as a consequence of the lower quota. True."},
+   {t:"Fishermen turned to the second species because of the quota.",a:"CS",ar:"الارتفاع مذكور والسبب غير مذكور. الربط بينهما معقول لكنه استنتاج من خارج النص. Can't Say.",en:"The rise is stated and the reason is not. Linking them is plausible but is an inference from outside the text. Can't Say."}
+  ]},
+ {p:"A laboratory produced a ceramic coating that resists temperatures above 1,400 degrees. In testing, coated components lasted longer than uncoated ones under identical conditions. The coating adds weight to the component. It has not yet been tested outside the laboratory.",
+  s:[
+   {t:"Coated components lasted longer than uncoated ones in testing.",a:"T",ar:"مذكور نصًّا مع قيد «تحت ظروف متطابقة». True.",en:"Stated directly, with the qualifier \"under identical conditions\". True."},
+   {t:"The coating has been tested in field conditions.",a:"F",ar:"النص يقول إنه لم يُختبر بعد خارج المختبر. False.",en:"The passage says it has not yet been tested outside the laboratory. False."},
+   {t:"The coating will be adopted commercially.",a:"CS",ar:"لا ذكر لأي خطة تسويق أو تبنٍّ. Can't Say.",en:"No commercial plan or adoption is mentioned. Can't Say."}
+  ]},
+ {p:"In a trial, one group received a new drug and another received a placebo. Neither the participants nor the staff administering the treatment knew which group was which. Symptom scores improved in both groups, though more in the drug group. The trial ran for twelve weeks.",
+  s:[
+   {t:"The staff administering the treatment knew who received the drug.",a:"F",ar:"النص ينفي علم الطرفين: المشاركين والطاقم. False.",en:"The passage denies knowledge on both sides: participants and staff. False."},
+   {t:"Symptom scores improved in the placebo group as well.",a:"T",ar:"النص يقول إن التحسّن حدث في المجموعتين، وإن كان أكبر في مجموعة الدواء. True.",en:"The passage says improvement occurred in both groups, though it was greater in the drug group. True."},
+   {t:"The drug is safe for long-term use.",a:"CS",ar:"التجربة استمرّت اثني عشر أسبوعًا ولا تتناول الأمان بعيد المدى. Can't Say.",en:"The trial ran twelve weeks and does not address long-term safety. Can't Say."}
+  ]},
+ {p:"A city restricted older diesel vehicles from its centre. Measured nitrogen dioxide at roadside monitors inside the zone fell. Levels at monitors outside the zone were unchanged. Traffic volumes inside the zone fell as well, and a new tram line opened in the same year.",
+  s:[
+   {t:"Nitrogen dioxide fell at roadside monitors inside the zone.",a:"T",ar:"مذكور نصًّا. True.",en:"Stated directly. True."},
+   {t:"Levels outside the zone fell as well.",a:"F",ar:"النص يقول إنها لم تتغيّر. False.",en:"The passage says they were unchanged. False."},
+   {t:"The vehicle restriction on its own caused the fall inside the zone.",a:"CS",ar:"خط ترام جديد افتُتح في السنة نفسها وحجم المرور انخفض أيضًا، فالنص لا يعزل أثر القيد وحده. Can't Say.",en:"A new tram line opened in the same year and traffic volumes also fell, so the passage does not isolate the restriction on its own. Can't Say."}
   ]}
 ];
 
@@ -754,7 +844,57 @@ var NUM=[
  {stem:"Fixed costs are 120,000 SAR and each unit sold contributes 30 SAR. How many units must be sold to cover the fixed costs?",
   ch:["3,000","3,600","4,000","4,800"],a:2,
   ar:"عدد الوحدات = التكاليف الثابتة ÷ مساهمة الوحدة = 120,000 ÷ 30 = 4,000 وحدة.",
-  en:"Units = fixed costs ÷ contribution per unit = 120,000 ÷ 30 = 4,000 units."}
+  en:"Units = fixed costs ÷ contribution per unit = 120,000 ÷ 30 = 4,000 units."},
+ {stem:"Which region recorded the largest percentage increase from 2023 to 2024?",
+  tbl:[["Region","2023","2024"],["North","480","552"],["South","620","589"],["East","350","434"],["West","900","918"],["(SAR thousands)","",""]],
+  ch:["North","South","East","West"],a:2,
+  ar:"لا تحكم بالفرق المطلق. احسب النسبة لكل منطقة: الشمال 15%، الجنوب سالب 5%، الشرق 24%، الغرب 2%. الغرب أكبر رقمًا لكن نموّه الأصغر تقريبًا — وهذا هو الفخّ.",
+  en:"Do not judge by the absolute gap. Work out each percentage: North 15%, South −5%, East 24%, West 2%. West has the biggest numbers but nearly the smallest growth — that is the trap."},
+ {stem:"What was the combined 2024 figure for North and East?",
+  tbl:[["Region","2023","2024"],["North","480","552"],["South","620","589"],["East","350","434"],["West","900","918"],["(SAR thousands)","",""]],
+  ch:["986,000 SAR","830,000 SAR","9,860,000 SAR","98,600 SAR"],a:0,
+  ar:"552 + 434 = 986، وبما أن الجدول بالآلاف فالناتج 986,000 ريال. الخيار 830,000 هو مجموع عمود 2023 للمنطقتين، موضوع لمن يقرأ العمود الخطأ.",
+  en:"552 + 434 = 986, and since the table is in thousands the answer is 986,000 SAR. The 830,000 option is the 2023 total for the same two regions — there for anyone reading the wrong column."},
+ {stem:"Which product generated the highest total revenue?",
+  tbl:[["Product","Units sold","Unit price"],["A","1,200","45"],["B","800","62"],["C","1,500","28"]],
+  ch:["Product A","Product B","Product C","They are equal"],a:0,
+  ar:"لا يكفي النظر إلى عمود واحد. اضرب العمودين: أ = 54,000، ب = 49,600، ج = 42,000. المنتج ج الأكثر مبيعًا بالعدد، والمنتج ب الأغلى سعرًا، والأعلى إيرادًا ليس أيًّا منهما.",
+  en:"One column is not enough. Multiply the two: A = 54,000, B = 49,600, C = 42,000. C sells the most units and B has the highest price, yet neither leads on revenue."},
+ {stem:"Which branch generated the highest revenue per employee?",
+  tbl:[["Branch","Revenue (SAR)","Employees"],["X","2,400,000","30"],["Y","1,800,000","20"],["Z","3,150,000","45"]],
+  ch:["Branch X","Branch Y","Branch Z","Cannot be determined"],a:1,
+  ar:"اقسم الإيراد على عدد الموظفين: س = 80,000، ص = 90,000، ع = 70,000. الفرع ع صاحب أعلى إيراد لكنه الأدنى لكل موظف — سؤال «لكل وحدة» يقلب الترتيب دائمًا تقريبًا.",
+  en:"Divide revenue by headcount: X = 80,000, Y = 90,000, Z = 70,000. Z has the highest revenue but the lowest figure per employee — a \"per unit\" question almost always reorders the ranking."},
+ {stem:"IT and Marketing together account for what percentage of the total budget?",
+  tbl:[["Department","Budget (SAR)"],["Operations","1,200,000"],["IT","480,000"],["HR","240,000"],["Marketing","480,000"]],
+  ch:["20%","30%","40%","48%"],a:2,
+  ar:"اجمع القسمين: 480,000 + 480,000 = 960,000. والإجمالي غير معطى، فاجمع الأعمدة كلها: 2,400,000. النسبة = 960,000 ÷ 2,400,000 × 100 = 40%. الفخّ هو افتراض أن الإجمالي معطى.",
+  en:"Add the two: 480,000 + 480,000 = 960,000. The total is not given, so sum the whole column: 2,400,000. The share is 960,000 ÷ 2,400,000 × 100 = 40%. The trap is assuming the total was supplied."},
+ {stem:"An invoice of 9,600 SAR is equal to how many pounds?",
+  tbl:[["Currency","Value in SAR"],["1 USD","3.75"],["1 EUR","4.10"],["1 GBP","4.80"]],
+  ch:["1,750 GBP","2,000 GBP","2,341 GBP","46,080 GBP"],a:1,
+  ar:"استخرج السطر الصحيح من الجدول أولًا، ثم اقسم لأن الاتجاه من الريال إلى العملة الأقوى: 9,600 ÷ 4.80 = 2,000 جنيه. الخيار 2,341 ناتج استخدام سعر اليورو بالخطأ.",
+  en:"Pick the right row from the table first, then divide, since the direction is from riyals to the stronger currency: 9,600 ÷ 4.80 = 2,000 GBP. The 2,341 option comes from using the euro rate by mistake."},
+ {stem:"Which production line had the highest defect rate?",
+  tbl:[["Line","Units produced","Defective units"],["1","4,000","120"],["2","2,500","100"],["3","6,000","150"]],
+  ch:["Line 1","Line 2","Line 3","Lines 1 and 3 are equal"],a:1,
+  ar:"المعدّل نسبة لا عدد: الخط 1 = 3%، الخط 2 = 4%، الخط 3 = 2.5%. الخط 3 أكثر عددًا في العيوب لكنه الأقل معدّلًا لأن إنتاجه أكبر.",
+  en:"A rate is a proportion, not a count: Line 1 = 3%, Line 2 = 4%, Line 3 = 2.5%. Line 3 has the most defective units but the lowest rate, because it produces the most."},
+ {stem:"Q2 accounted for what percentage of annual revenue?",
+  tbl:[["Quarter","Revenue (SAR)"],["Q1","1,150,000"],["Q2","1,380,000"],["Q3","920,000"],["Q4","1,150,000"]],
+  ch:["25%","28%","30%","34%"],a:2,
+  ar:"اجمع الأرباع الأربعة: 4,600,000. ثم 1,380,000 ÷ 4,600,000 × 100 = 30%. أي سؤال عن «نصيب من الإجمالي» يبدأ بجمع العمود لا بالقسمة.",
+  en:"Sum the four quarters: 4,600,000. Then 1,380,000 ÷ 4,600,000 × 100 = 30%. Any \"share of the total\" question starts by summing the column, not by dividing."},
+ {stem:"What was the percentage change in total costs from 2023 to 2024?",
+  tbl:[["Cost","2023","2024"],["Materials","1,800,000","1,980,000"],["Labour","1,200,000","1,260,000"],["Overheads","600,000","540,000"]],
+  ch:["3%","5%","6%","10%"],a:1,
+  ar:"اجمع كل سنة قبل المقارنة: 2023 = 3,600,000 و2024 = 3,780,000. الفرق 180,000 على 3,600,000 = 5%. لا تحسب متوسط النسب الثلاث، فالبنود مختلفة الأحجام والمتوسط يعطي رقمًا خاطئًا.",
+  en:"Total each year before comparing: 2023 = 3,600,000 and 2024 = 3,780,000. The difference of 180,000 on 3,600,000 is 5%. Do not average the three individual percentages: the lines differ in size and the average gives the wrong figure."},
+ {stem:"Which store completed the most transactions?",
+  tbl:[["Store","Footfall","Conversion rate"],["A","12,000","4%"],["B","9,000","6%"],["C","15,000","3%"]],
+  ch:["Store A","Store B","Store C","Stores A and C are equal"],a:1,
+  ar:"اضرب الزيارات في نسبة التحويل: أ = 480، ب = 540، ج = 450. المتجر ج الأكثر زيارات والأقل معاملات، وهذا نمط متكرر: العمود الأكبر ليس الجواب.",
+  en:"Multiply footfall by conversion rate: A = 480, B = 540, C = 450. Store C has the most visitors and the fewest transactions — a recurring pattern: the largest column is not the answer."}
 ];
 
 /* ── مولّد أسئلة الأشكال: خمسة أشكال معروضة والسادس هو المطلوب ── */
@@ -936,6 +1076,24 @@ var SHNAME_EN={3:'a triangle',4:'a square',5:'a pentagon',6:'a hexagon'};
   var lang='ar',sec='verbal',mode='review',state=null,timer=null;
   var runner=document.getElementById('runner'),setup=document.getElementById('setup');
   function t(){return T[lang];}
+  var SKEY='shl-session',HKEY='shl-history';
+  function saveSession(){
+    if(!state||state.done||mode!=='exam')return;
+    try{localStorage.setItem(SKEY,JSON.stringify({sec:sec,mode:mode,idx:state.idx,
+      ans:state.ans,left:state.left,items:state.items,at:Date.now()}));}catch(e){}
+  }
+  function clearSession(){try{localStorage.removeItem(SKEY);}catch(e){}}
+  function loadSession(){
+    try{var r=localStorage.getItem(SKEY);if(!r)return null;var d=JSON.parse(r);
+      return (d&&d.items&&d.items.length&&d.left>0)?d:null;}catch(e){return null;}
+  }
+  function pushHistory(r,n){
+    try{var a=JSON.parse(localStorage.getItem(HKEY)||'[]');
+      a.unshift({sec:sec,right:r,total:n,at:Date.now()});
+      localStorage.setItem(HKEY,JSON.stringify(a.slice(0,6)));}catch(e){}
+  }
+  function readHistory(){try{return JSON.parse(localStorage.getItem(HKEY)||'[]');}catch(e){return [];}}
+
   function ex(it){return it[lang]||it.ar;}
 
   function paintChrome(){
@@ -956,8 +1114,29 @@ var SHNAME_EN={3:'a triangle',4:'a square',5:'a pentagon',6:'a hexagon'};
       chip('data-sec','inductive',sec,L.secI,L.secIs)+'</div></div>'+
       '<div class="field"><div class="lbl">'+L.lblMode+'</div><div class="chips" id="modeChips">'+
       chip('data-mode','review',mode,L.mR,L.mRs)+chip('data-mode','exam',mode,L.mE,L.mEs)+'</div></div>'+
-      '<button class="go" id="startBtn" type="button">'+L.start+'</button>';
+      '<button class="go" id="startBtn" type="button">'+L.start+'</button>'+
+      resumeHTML()+historyHTML()+
+      '<p class="kbdhint">'+L.kbd+'</p>';
     wireSetup();
+  }
+  function resumeHTML(){
+    var d=loadSession(),L=t();
+    if(!d)return '';
+    return '<div class="resume"><h3>'+L.resumeT+'</h3><p>'+
+      L.resumeB(d.idx+1,d.items.length,L.secName[d.sec])+'</p><div class="row">'+
+      '<button class="main" id="resumeGo" type="button">'+L.resumeGo+'</button>'+
+      '<button id="resumeNo" type="button">'+L.resumeNo+'</button></div></div>';
+  }
+  function historyHTML(){
+    var a=readHistory(),L=t();
+    if(!a.length)return '';
+    var rows=a.map(function(r){
+      var pc=Math.round(r.right/r.total*100),d=new Date(r.at);
+      var dt=d.getDate()+'/'+(d.getMonth()+1);
+      return '<li><span>'+L.secName[r.sec]+' <span style="color:var(--muted)">'+dt+'</span></span>'+
+             '<span><b>'+r.right+' / '+r.total+'</b> <span style="color:var(--muted)">('+pc+'%)</span></span></li>';
+    }).join('');
+    return '<div class="hist"><h3>'+L.histT+'</h3><ul>'+rows+'</ul></div>';
   }
   function chip(attr,val,cur,label,sub){
     return '<button class="chip" '+attr+'="'+val+'" aria-pressed="'+(cur===val?'true':'false')+'">'+
@@ -973,15 +1152,19 @@ var SHNAME_EN={3:'a triangle',4:'a square',5:'a pentagon',6:'a hexagon'};
         if(attr==='data-sec')sec=b.getAttribute(attr);else mode=b.getAttribute(attr);
       });
     });
-    document.getElementById('startBtn').addEventListener('click',begin);
+    document.getElementById('startBtn').addEventListener('click',function(){begin(null);});
+    var rg=document.getElementById('resumeGo'),rn=document.getElementById('resumeNo');
+    if(rg)rg.addEventListener('click',function(){begin(loadSession());});
+    if(rn)rn.addEventListener('click',function(){clearSession();paintChrome();});
   }
 
   document.getElementById('langBtn').addEventListener('click',function(){
     lang=lang==='ar'?'en':'ar';
     try{localStorage.setItem('shl-lang',lang);}catch(e){}
-    if(timer){clearInterval(timer);timer=null;}
-    state=null;runner.hidden=true;runner.innerHTML='';setup.hidden=false;
+    var live=state&&!state.done;
     paintChrome();
+    if(live){setup.hidden=true;runner.hidden=false;render();}
+    else {runner.hidden=true;runner.innerHTML='';setup.hidden=false;}
   });
   (function(){
     var b=document.getElementById('themeBtn'),cur=null;
@@ -1099,6 +1282,7 @@ var SHNAME_EN={3:'a triangle',4:'a square',5:'a pentagon',6:'a hexagon'};
       h+='<div class="result"><div class="big">'+right+' / '+s.items.length+'</div>'+
          '<div class="sub">'+L.pctRight(pct)+'</div>'+
          '<div class="bar"><i style="flex:'+right+';background:var(--ok)"></i><i style="flex:'+(s.items.length-right)+';background:var(--rule-soft)"></i></div>'+
+         (s.ranOut?'<div class="sub" style="color:var(--no)">'+L.timeUp+'</div>':'')+
          '<div class="sub">'+L.resNote+'</div></div>';
       if(sec==='verbal'){
         var lab=["True","False","Can't Say"],hit=[0,0,0],tot=[0,0,0];
@@ -1134,6 +1318,7 @@ var SHNAME_EN={3:'a triangle',4:'a square',5:'a pentagon',6:'a hexagon'};
         b.addEventListener('click',function(){
           if(mode==='exam'&&s.done)return;
           s.ans[qi]=parseInt(b.getAttribute('data-i'),10);
+          saveSession();
           Array.prototype.forEach.call(qd.querySelectorAll('.ch'),function(o){
             o.setAttribute('aria-pressed',o===b?'true':'false');});
           if(mode==='review'){
@@ -1149,17 +1334,33 @@ var SHNAME_EN={3:'a triangle',4:'a square',5:'a pentagon',6:'a hexagon'};
       });
     });
     var pb=runner.querySelector('#prevBtn'),nb=runner.querySelector('#nextBtn'),bb=runner.querySelector('#backBtn');
-    if(pb)pb.addEventListener('click',function(){if(s.idx>0){s.idx--;render();window.scrollTo(0,0);}});
+    if(pb)pb.addEventListener('click',function(){if(s.idx>0){s.idx--;saveSession();render();window.scrollTo(0,0);}});
     if(nb)nb.addEventListener('click',function(){
-      if(s.idx<s.items.length-1){s.idx++;render();window.scrollTo(0,0);}else finish();});
+      if(s.idx<s.items.length-1){s.idx++;saveSession();render();window.scrollTo(0,0);}else finish();});
     if(bb)bb.addEventListener('click',function(){
       if(timer){clearInterval(timer);timer=null;}
-      runner.hidden=true;setup.hidden=false;window.scrollTo(0,0);});
+      state=null;runner.hidden=true;runner.innerHTML='';
+      paintChrome();setup.hidden=false;window.scrollTo(0,0);});
   }
-  function finish(){if(timer){clearInterval(timer);timer=null;}state.done=true;render();window.scrollTo(0,0);}
+  function finish(){
+    if(timer){clearInterval(timer);timer=null;}
+    state.done=true;clearSession();
+    if(mode==='exam'){
+      var r=0;state.items.forEach(function(it,i){if(isRight(it,state.ans[i]))r++;});
+      pushHistory(r,state.items.length);
+    }
+    render();window.scrollTo(0,0);
+  }
 
-  function begin(){
-    state=build();setup.hidden=true;runner.hidden=false;
+  function begin(saved){
+    if(saved){
+      sec=saved.sec;mode='exam';
+      state={items:saved.items,idx:saved.idx,ans:saved.ans,left:saved.left,done:false};
+    } else {
+      clearSession();
+      state=build();
+    }
+    setup.hidden=true;runner.hidden=false;
     if(timer){clearInterval(timer);timer=null;}
     render();window.scrollTo(0,0);
     if(mode==='exam'){
@@ -1167,13 +1368,34 @@ var SHNAME_EN={3:'a triangle',4:'a square',5:'a pentagon',6:'a hexagon'};
         state.left--;
         var c=runner.querySelector('#clk');
         if(c){c.textContent=fmt(state.left);c.classList.toggle('low',state.left<60);}
-        if(state.left<=0)finish();
+        if(state.left%5===0)saveSession();
+        if(state.left<=0){state.ranOut=true;finish();}
       },1000);
     }
   }
 
+  function syncHeader(){
+    var el=document.querySelector('header.top');
+    if(el)document.documentElement.style.setProperty('--hdr',el.offsetHeight+'px');
+  }
+  window.addEventListener('resize',syncHeader);
+  window.addEventListener('orientationchange',syncHeader);
+  setTimeout(syncHeader,0);setTimeout(syncHeader,400);
   try{var sl=localStorage.getItem('shl-lang');if(sl==='en'||sl==='ar')lang=sl;}catch(e){}
+  document.addEventListener('keydown',function(ev){
+    if(!state||state.done||runner.hidden)return;
+    if(ev.metaKey||ev.ctrlKey||ev.altKey)return;
+    var opts=runner.querySelectorAll('.q .ch');
+    if(ev.key>='1'&&ev.key<='4'){
+      var n=parseInt(ev.key,10)-1;
+      if(opts[n]){opts[n].click();ev.preventDefault();}
+    } else if(ev.key==='Enter'){
+      var nb=runner.querySelector('#nextBtn');
+      if(nb){nb.click();ev.preventDefault();}
+    }
+  });
   paintChrome();
+  syncHeader();
 })();
 </script>
 </body>
