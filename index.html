@@ -2,6 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>منصة التحضير لاختبار SHL — أرامكو | SHL Preparation</title>
 <meta name="description" content="شرح أقسام اختبار SHL الثلاثة مع تدريب في وضعين. Guide to the three SHL sections with practice in two modes.">
@@ -170,7 +172,8 @@ td:first-child{font-family:var(--head-font);font-size:.84rem;color:var(--muted)}
 .ch.svgch svg{width:56px;height:56px}
 .choices.grid{flex-direction:row;flex-wrap:wrap}
 .choices.grid .ch{flex:1 1 calc(33.333% - 6px);min-width:78px;max-width:130px}
-.seqrow{display:flex;gap:5px;flex-wrap:nowrap;align-items:stretch;margin:0 0 16px;width:100%}
+.seqrow{display:flex;gap:5px;flex-wrap:nowrap;align-items:stretch;margin:0 0 16px;width:100%;direction:ltr}
+.choices.grid{direction:ltr}
 .frame{border:1px solid var(--rule);border-radius:2px;line-height:0;flex:1 1 0;min-width:0;max-width:60px}
 .frame svg{width:100%;height:auto;display:block}
 .frame.miss{border-style:dashed;display:flex;align-items:center;justify-content:center;
@@ -260,9 +263,9 @@ ar:{
  resumeB:function(a,b,c){return c+' · توقفت عند سؤال '+a+' من '+b;},
  resumeGo:'أكمل من حيث توقفت',resumeNo:'ابدأ جلسة جديدة',
  histT:'نتائجك السابقة',histNone:'',timeUp:'انتهى الوقت قبل أن تُنهي الأسئلة.',
- kbd:'على الكمبيوتر: اضغط 1 إلى 4 لاختيار إجابة، و Enter للانتقال.',
+ kbd:'على الكمبيوتر: اضغط 1 إلى 5 لاختيار إجابة، و Enter للانتقال.',
  good:'إجابة صحيحة',bad:'إجابة خاطئة',none:'لم تُجب',
- seqQ:'أي الخيارات يكمل التسلسل؟',
+ seqQ:'أي الخيارات يكمل التسلسل؟ <span style="display:block;color:var(--muted);font-size:.8em;margin-top:2px">التسلسل يُقرأ من اليسار إلى اليمين ‎→</span>',
  foot:'<p>هذه المنصة مرجع تعريفي وتدريبي أُعدّ للمتقدّمين، وليست صادرة عن SHL ولا عن أي جهة توظيف. جميع الأسئلة الواردة فيها أصلية وُضعت على نمط الاختبار، ولا تحتوي على أسئلة الاختبار الفعلية.</p><p>تفاصيل المدة وعدد الأسئلة قد تختلف بحسب النسخة والوظيفة المتقدَّم عليها. آخر تحديث: سبتمبر 2026.</p>'
 },
 en:{
@@ -300,9 +303,9 @@ en:{
  resumeB:function(a,b,c){return c+' · you stopped at question '+a+' of '+b;},
  resumeGo:'Resume where you left off',resumeNo:'Start a new session',
  histT:'Your recent results',histNone:'',timeUp:'Time ran out before you finished the questions.',
- kbd:'On a computer: press 1 to 4 to choose an answer, and Enter to move on.',
+ kbd:'On a computer: press 1 to 5 to choose an answer, and Enter to move on.',
  good:'Correct',bad:'Incorrect',none:'Not answered',
- seqQ:'Which option completes the sequence?',
+ seqQ:'Which option completes the sequence? <span style="display:block;color:var(--muted);font-size:.8em;margin-top:2px">The sequence reads left to right →</span>',
  foot:'<p>This is an informational and practice resource prepared for candidates. It is not produced by SHL or by any employer. All questions on it are original, written in the style of the test; none are actual test items.</p><p>Timings and question counts vary by version and by the role applied for. Last updated: September 2026.</p>'
 }};
 
@@ -570,9 +573,9 @@ var VERBAL=[
    {t:"Only engineering graduates may apply to the scheme.",a:"F",ar:"النص يقول إن البرنامج مفتوح لخريجي أي تخصص. غلبة الهندسة بين المقبولين لا تعني حصر التقديم. False.",en:"The passage says the scheme is open to any discipline. Engineering dominating among those accepted does not restrict who may apply. False."},
    {t:"Applicants who have interned are more likely to receive an offer than those who have not.",a:"CS",ar:"نعرف نصيب المتدرّبين من العروض، لكن لا نعرف نصيبهم من المتقدّمين. بلا هذا الرقم لا تُحسب أفضلية. Can't Say.",en:"We know interns' share of the offers but not their share of the applicants. Without that figure no advantage can be established. Can't Say."}
   ]},
- {p:"A logistics firm switched a third of its fleet to a newer engine model. Fuel consumption per kilometre fell for those vehicles. Maintenance intervals for the new engines are longer, but each service is more expensive. Drivers reported no difference in handling.",
+ {p:"A logistics firm switched a third of its fleet to a newer engine model. Fuel consumption per kilometre fell for those vehicles and was unchanged for the rest of the fleet. Maintenance intervals for the new engines are longer, but each service is more expensive. Drivers reported no difference in handling.",
   s:[
-   {t:"Fuel consumption per kilometre fell across the entire fleet.",a:"F",ar:"الانخفاض يخصّ ثلث الأسطول الذي جرى تبديله فقط. تعميمه على الأسطول كله يناقض النص. False.",en:"The fall applies only to the third of the fleet that was switched. Generalising it to the whole fleet contradicts the text. False."},
+   {t:"Fuel consumption per kilometre fell across the entire fleet.",a:"F",ar:"الانخفاض يخصّ ثلث الأسطول الذي جرى تبديله فقط، والنص يقول صراحة إن بقية الأسطول لم يتغيّر. تعميمه على الأسطول كله يناقض النص. False.",en:"The fall applies only to the third of the fleet that was switched, and the passage says the rest of the fleet was unchanged. Generalising it to the whole fleet contradicts the text. False."},
    {t:"The new engines are serviced less often than the older ones.",a:"T",ar:"فترات الصيانة أطول، ومعناها صيانة أقل تكرارًا. True.",en:"Longer maintenance intervals mean servicing less often. True."},
    {t:"Total maintenance spending on the new engines is lower.",a:"CS",ar:"الفترات أطول لكن كل صيانة أغلى. الاتجاهان متعاكسان والنص لا يرجّح أيهما يغلب. Can't Say.",en:"Intervals are longer but each service costs more. The two pull in opposite directions and the passage does not say which prevails. Can't Say."}
   ]},
@@ -633,7 +636,7 @@ var VERBAL=[
  {p:"A city introduced a bus lane on its busiest corridor. Average bus journey times fell by 11 minutes. Journey times for private cars on the same corridor rose slightly. Ridership on the route increased over the following year, although fares were also reduced during that period.",
   s:[
    {t:"Bus journey times improved on the corridor.",a:"T",ar:"انخفاض 11 دقيقة تحسّن مذكور نصًّا. True.",en:"A fall of 11 minutes is an improvement stated directly. True."},
-   {t:"Journey times for private cars also improved.",a:"F",ar:"النص يقول إن أزمنة السيارات الخاصة ارتفعت قليلًا على المسار نفسه. الارتفاع عكس التحسّن، فالعبارة مناقضة. False — ولاحظ أن lightly لا تلغي الاتجاه.",en:"The passage says journey times for private cars rose slightly on the same corridor. A rise is the opposite of an improvement, so the statement is contradicted. False — and \"slightly\" does not reverse the direction."},
+   {t:"Journey times for private cars also improved.",a:"F",ar:"النص يقول إن أزمنة السيارات الخاصة ارتفعت قليلًا على المسار نفسه. الارتفاع عكس التحسّن، فالعبارة مناقضة. False — ولاحظ أن slightly لا تلغي الاتجاه.",en:"The passage says journey times for private cars rose slightly on the same corridor. A rise is the opposite of an improvement, so the statement is contradicted. False — and \"slightly\" does not reverse the direction."},
    {t:"The bus lane was responsible for the rise in ridership.",a:"CS",ar:"الأجرة خُفّضت في الفترة نفسها، فالسبب غير محسوم في النص. Can't Say.",en:"Fares were cut in the same period, so the passage does not settle the cause. Can't Say."}
   ]},
  {p:"A firm moved from quarterly software releases to monthly ones. The number of defects found by customers per release fell, although the total across the year was broadly unchanged. Support staff report that smaller releases are easier to roll back.",
@@ -714,10 +717,10 @@ var VERBAL=[
    {t:"The authority reported a change in infection rates.",a:"F",ar:"النص يقول صراحة إنها لم تُبلّغ عن ذلك. False.",en:"The passage states explicitly that it has not reported this. False."},
    {t:"The review step harmed patient outcomes.",a:"CS",ar:"ارتفاع الشكاوى عن الانتظار لا يقيس النتائج الصحية، ونتائج العدوى غير معلومة أصلًا. Can't Say.",en:"A rise in complaints about waiting does not measure clinical outcomes, and infection rates are unreported. Can't Say."}
   ]},
- {p:"An index fund tracks a basket of shares rather than selecting them individually. Its management fee is lower than that of actively managed funds. Over the last decade, most actively managed funds in the same category did not outperform their index. Past performance does not guarantee future results.",
+ {p:"An index fund tracks a basket of shares rather than selecting them individually. Its management fee is lower than that of actively managed funds. Over the last decade, most actively managed funds in the same category did not outperform their index, although a minority did. Past performance does not guarantee future results.",
   s:[
    {t:"Index funds charge a lower management fee than actively managed funds.",a:"T",ar:"منصوص عليه في النص كمقارنة صريحة. True.",en:"Stated in the passage as an explicit comparison. True."},
-   {t:"Every actively managed fund failed to beat its index over the decade.",a:"F",ar:"النص يقول «most» أي معظمها لا كلها. تحويل «معظم» إلى «كل» مناقضة للنص. False.",en:"The passage says most, not all. Turning \"most\" into \"every\" contradicts it. False."},
+   {t:"Every actively managed fund failed to beat its index over the decade.",a:"F",ar:"النص يقول «most» ثم يصرّح بأن أقلية تفوّقت على مؤشرها. تحويل «معظم» إلى «كل» مناقضة للنص. False.",en:"The passage says most, and adds that a minority did outperform. Turning \"most\" into \"every\" contradicts it. False."},
    {t:"Index funds will outperform actively managed funds over the next decade.",a:"CS",ar:"النص يختم بأن الأداء السابق لا يضمن اللاحق، فهو يمنع هذا الاستنتاج صراحة دون أن ينفي وقوعه. Can't Say.",en:"The passage closes by saying past performance does not guarantee future results, which blocks the inference without denying the outcome. Can't Say."}
   ]},
  {p:"When the market price of a bond falls, its yield rises, because the fixed coupon represents a larger share of the lower price. A fund reported that the market value of its bond holdings declined last quarter. The fund did not sell any of the holdings. Coupon payments continued as scheduled.",
@@ -1132,8 +1135,8 @@ var NUM=[
   en:"From 100 to 80, recovering requires a rise of 20 on a base of 80 = 25%. The fall and the recovery are not equal percentages because the base has changed — one of the commonest errors on the test."},
  {stem:"Fixed costs are 60,000 SAR and the target profit is 40,000 SAR. Each unit contributes 25 SAR. How many units must be sold?",
   ch:["1,600","2,400","4,000","5,600"],a:2,
-  ar:"الوحدات = (التكاليف الثابتة + الربح المستهدف) ÷ مساهمة الوحدة = (60,000 + 40,000) ÷ 25 = 4,000. الخيار 2,400 يغفل التكاليف الثابتة، و1,600 يغفل الربح المستهدف.",
-  en:"Units = (fixed costs + target profit) ÷ contribution per unit = (60,000 + 40,000) ÷ 25 = 4,000. The 2,400 option ignores fixed costs and 1,600 ignores the target profit."},
+  ar:"الوحدات = (التكاليف الثابتة + الربح المستهدف) ÷ مساهمة الوحدة = (60,000 + 40,000) ÷ 25 = 4,000. الخيار 2,400 يغفل الربح المستهدف (60,000 ÷ 25)، و1,600 يغفل التكاليف الثابتة (40,000 ÷ 25).",
+  en:"Units = (fixed costs + target profit) ÷ contribution per unit = (60,000 + 40,000) ÷ 25 = 4,000. The 2,400 option ignores the target profit (60,000 ÷ 25) and 1,600 ignores the fixed costs (40,000 ÷ 25)."},
  {stem:"Of 7,200 applicants, 25% passed the screening stage and 40% of those were interviewed. How many were interviewed?",
   ch:["720","1,800","2,880","2,160"],a:0,
   ar:"خطوتان: 7,200 × 0.25 = 1,800 اجتازوا الفرز، ثم 1,800 × 0.40 = 720. الخيار 1,800 موضوع لمن يتوقف عند الخطوة الأولى، و2,880 لمن يطبّق 40% على العدد الكلي.",
@@ -1319,7 +1322,7 @@ function perturbFigure(st,a){
   if(a==='count') c.count=clamp(c.count>=4?c.count-1:c.count+1,1,6);
   if(a==='shade') c.shade=(c.shade+1+rnd(2))%3;
   if(a==='rot')   c.rot=(c.rot+(Math.random()<0.5?90:270))%360;
-  if(a==='size')  c.size=clamp(c.size>=3?c.size-1:c.size+1,0,5);
+  if(a==='size')  c.size=clamp(c.size>=3?c.size-2:c.size+2,0,5);
   if(a==='sides') c.sides=clamp(c.sides>=5?c.sides-1:c.sides+1,3,6);
   if(a==='mirror')c.mirror=1-c.mirror;
   return c;
@@ -1366,12 +1369,15 @@ function makeInductive(){
   function saveSession(){
     if(!state||state.done||mode!=='exam')return;
     try{localStorage.setItem(SKEY,JSON.stringify({sec:sec,mode:mode,idx:state.idx,
-      ans:state.ans,left:state.left,items:state.items,at:Date.now()}));}catch(e){}
+      ans:state.ans,spent:state.spent,left:state.left,items:state.items,at:Date.now()}));}catch(e){}
   }
   function clearSession(){try{localStorage.removeItem(SKEY);}catch(e){}}
   function loadSession(){
     try{var r=localStorage.getItem(SKEY);if(!r)return null;var d=JSON.parse(r);
-      return (d&&d.items&&d.items.length&&d.left>0)?d:null;}catch(e){return null;}
+      var ok=d&&Array.isArray(d.items)&&d.items.length&&Array.isArray(d.ans)&&d.ans.length===d.items.length&&
+        typeof d.left==='number'&&d.left>0&&(d.sec==='verbal'||d.sec==='numerical'||d.sec==='inductive')&&
+        typeof d.idx==='number'&&d.idx>=0&&d.idx<d.items.length;
+      return ok?d:null;}catch(e){return null;}
   }
   function pushHistory(r,n){
     try{var a=JSON.parse(localStorage.getItem(HKEY)||'[]');
@@ -1699,7 +1705,8 @@ function makeInductive(){
     }
     if(saved){
       sec=saved.sec;mode='exam';
-      state={items:saved.items,idx:saved.idx,ans:saved.ans,left:saved.left,done:false};
+      state={items:saved.items,idx:saved.idx,ans:saved.ans,left:saved.left,done:false,
+        spent:(saved.spent&&saved.spent.length===saved.items.length)?saved.spent:new Array(saved.items.length).fill(0)};
     } else {
       clearSession();
       state=build();
@@ -1729,8 +1736,9 @@ function makeInductive(){
   document.addEventListener('keydown',function(ev){
     if(!state||state.done||runner.hidden)return;
     if(ev.metaKey||ev.ctrlKey||ev.altKey)return;
+    if(mode!=='exam')return;
     var opts=runner.querySelectorAll('.q .ch');
-    if(ev.key>='1'&&ev.key<='4'){
+    if(ev.key>='1'&&ev.key<='5'){
       var n=parseInt(ev.key,10)-1;
       if(opts[n]){opts[n].click();ev.preventDefault();}
     } else if(ev.key==='Enter'){
